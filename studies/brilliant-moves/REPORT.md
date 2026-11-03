@@ -16,21 +16,21 @@ The sample comes from nelsi, hansen, KNVB, GothamChess and Hikaru. Comparison mo
 
 ## A Brilliant can be quiet
 
-![Hikaru's Bg2 leaves a rook offered; accepting trades a rook for a bishop.](figures/quiet-offer.png)
+![Hikaru's Bg2 leaves a rook offered; accepting trades a rook for a bishop.](visuals/outputs/quiet-offer-bg2.gif)
 
-In [Hikaru's 27.Bg2](https://www.chess.com/analysis/game/live/186567991235/review?move=52), White leaves the attacked rook on b1 available. After ...Bxb1, the other rook can recapture the bishop: White gives a rook for a bishop while retaining compensation. Chess.com and Mute both award Brilliant.
+In [Hikaru's 27.Bg2](https://www.chess.com/analysis/game/live/186567991235/review?move=52), White leaves the attacked rook on b1 available. If Black accepts with **...Bxb1**, the other rook can recapture with **Rxb1**: White trades a rook for a bishop while retaining compensation. The animation illustrates that acceptance. Chess.com and Mute both award Bg2 Brilliant.
 
 The earlier sequence **Re1, ...Nd3, Reb1, ...Ne5** matters. The knight's move to e5 clears the g6–b1 diagonal, exposing the rook to the bishop on g6. Bg2 keeps that offer on the board. It does not newly uncover the attack. Looking only at the piece that moved would miss the rook; requiring every Brilliant to create a new attack would miss the choice to leave it offered.
 
 ## A clever combination is a harder boundary
 
-![Two legal capture sequences recover material elsewhere and finish a pawn ahead, but have different Chess.com labels.](figures/similar-trades.png)
+![Two legal capture sequences recover material elsewhere and finish a pawn ahead, but have different Chess.com labels.](visuals/outputs/similar-trades-native.png)
 
 In [14...Ndxe5](https://www.chess.com/analysis/game/live/186311900336/review?move=27), Black takes a pawn and apparently offers a knight. The continuation **15.Nxe5 Nxe5 16.fxe5 Rxd3** recovers a bishop elsewhere. Black exchanges two knights for a knight and bishop, gaining a pawn. Chess.com calls the move **Excellent**; the proposed Mute rule withholds Brilliant.
 
-![The rook recovers a bishop on another square in the Excellent reference combination.](figures/pawn-win-excellent.gif)
+![The rook recovers a bishop on another square in the Excellent reference combination.](visuals/outputs/pawn-win-excellent.gif)
 
-Yet the illustrated [**9...Nxd5** combination](https://www.chess.com/analysis/game/live/186305472636/review?move=17) also exchanges equal-valued pieces and finishes a pawn ahead, and Chess.com calls that move Brilliant. These two reference positions are **outside the benchmark totals**. Their continuations are legal illustrations, not forced replies or the actual game sequence. They show why “the material eventually comes back” cannot, by itself, reconstruct Chess.com's boundary. [Watch the Brilliant example's illustrated continuation](figures/pawn-win-brilliant.gif).
+Yet the illustrated [**9...Nxd5** combination](https://www.chess.com/analysis/game/live/186305472636/review?move=17) also exchanges equal-valued pieces and finishes a pawn ahead, and Chess.com calls that move Brilliant. These two reference positions are **outside the benchmark totals**. Their continuations are legal illustrations, not forced replies or the actual game sequence. They show why “the material eventually comes back” cannot, by itself, reconstruct Chess.com's boundary. [Watch the Brilliant example's illustrated continuation](visuals/outputs/pawn-win-brilliant.gif).
 
 ## Turning those observations into a rule
 

@@ -153,3 +153,21 @@ node --import ./reference/proposed-v3/node_modules/tsx/dist/loader.mjs \
 ```
 
 Python3/python-chess, the public SQLite and recorded SF18 binary additionally support new engine runs through the supplied collector. Preserve original outputs and write new files. Replay of identical saved inputs and pinned rule bodies is exact; new engine runs can differ because of session/hash history, cached resumptions and engine execution. Such differences must be reported rather than forcing a desired label. Source hashes and retained GPL/AGPL notices remain authoritative. The helper scripts are bounded study tools, not application infrastructure.
+
+## Board illustration assets and reproduction
+
+The report’s board illustrations use Mute Chess’s exact Moss squares (`#C7CFBA` / `#668478`) and native gold last-move highlights (`rgb(217 178 95 / 42%)`). The piece artwork is Colin M. L. Burnett’s native Lichess Cburnett set, distributed under **GPL-2.0-or-later**; the original twelve SVGs and complete license accompany the derived images. Board source, source revisions and per-file hashes are recorded in [asset provenance](visuals/ASSET-PROVENANCE.json). These visual assets do not change the benchmark inputs, source freeze or classification results.
+
+[The illustration renderer](visuals/render-boards.py) uses python-chess 1.11.2, Pillow 13.0.0 and the official pinned resvg 0.47.0 executable. It checks every SAN move for legality, eases piece motion over 240 ms, fades captures over about 120 ms and uses one fixed GIF palette with exact native flat colors. Only 27.Bg2 carries the observed Brilliant label in the quiet-offer animation; ...Bxb1 Rxb1 is a conditional illustration. The pawn-winning variations are likewise legal illustrations, not forced or asserted game continuations.
+
+For reproduction, install [the two Python requirements](visuals/requirements.txt), obtain the appropriate official resvg binary, and run from the study directory:
+
+```sh
+python3 visuals/render-boards.py --case quiet-offer-bg2 --formats gif,png,svg --resvg /path/to/resvg
+python3 visuals/render-boards.py --case pawn-win-excellent --formats gif,png,svg --resvg /path/to/resvg
+python3 visuals/render-boards.py --case pawn-win-brilliant --formats gif,png,svg --resvg /path/to/resvg
+python3 visuals/render-boards.py --comparison --resvg /path/to/resvg
+python3 visuals/inspect-frames.py
+```
+
+[Export documentation](visuals/README.md) includes the official rasterizer release/hash, font behavior, contact sheet, frame timing and render receipts. Only source artwork, scripts and finished illustrations are included; executables, local raster caches and download archives are excluded.
