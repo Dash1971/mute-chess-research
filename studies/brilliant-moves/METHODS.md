@@ -1,16 +1,18 @@
 # Methods, sources and reproduction
 
+**Recommendation: adopt the Mute History Rule with the narrow existing-offer material-recovery guard.** The refinement’s all 1,048 replay gives 400TP/113FN/22FP/513TN, removing exactly two extras while retaining all 400 previous matches. It was designed after inspecting these labels, including the historical 200 test. **All 1,048 are development for the refinement, with zero unseen refinement-validation cases.** The unrefined frozen S 200 result 78/22/5/95 remains independent evidence only for that earlier base rule. Native SF19 and varying budgets remain unvalidated.
+
 This is the technical companion to the [reader report](REPORT.md) and [exact algorithm](README.md). It documents a fixed-candidate experiment, not a native deployment or a recovered Chess.com formula.
 
-## Study roles and sampling
+## Evidence roles: historical test versus retrospective refinement
 
 The unified corpus contains **1,048 labeled moves from 545 games**. The **848-move, 439-game development partition** supplied feature development, diagnostic comparisons and the final frozen model. It contains 413 current observed Brilliants and 435 explicitly non-Brilliant controls. Every development result is treated as development evidence, including grouped cross-validation and engine-budget sensitivity.
 
-The **200-move, 106-game fresh test** contains 100 current Brilliants and 100 explicit non-Brilliants. Each of nelsi, hansen, KNVB, GothamChess and Hikaru contributes 20 per class. Entire games and sampled positions are excluded across the development/test boundary; prior reviewed/regression examples are also excluded under the frozen plan. This test uses the final full-data forest, not the development fold-specific models.
+The **200-move, 106-game fresh test** contains 100 current Brilliants and 100 explicit non-Brilliants. Each of nelsi, hansen, KNVB, GothamChess and Hikaru contributes 20 per class. Entire games and sampled positions are excluded across the development/test boundary; prior reviewed/regression examples are also excluded under the frozen plan. The rule and all comparators were fixed before fresh labels. The forest comparison uses its final full-data model, not development fold-specific models.
 
 Historical Chess.com galleries supply labeled candidate positions; published monthly full-game PGNs preserve history. Category availability differs by sampling frame and account. The test is deliberately balanced and its controls favor relevant captures, offers, recaptures and tactical alternatives; not every control is difficult or non-opening. Book and Forced are retained when explicitly observed. Gallery absence alone never supplies a negative label.
 
-Candidate source, extractor, model, threshold, selection order and systematic reserves were frozen before current test labels. Explicit Game Review classifications determine the primary labels. A historical candidate that is currently non-Brilliant and an intended control that is currently Brilliant remain secondary rather than being relabeled. Fixed reserves satisfy the class quotas without consulting classifier predictions. The completed audit retains **10 secondary observations: six gallery-label differences and four Brilliant control attempts**. Those are not part of the 200 primary metrics.
+For the original S/forest/EC comparison, candidate source, extractor, model, threshold, selection order and systematic reserves were frozen before current test labels. Those archived sources/results remain unchanged. This statement does not describe the new material guard, which uses all 1,048 as development. Explicit Game Review classifications determine the primary labels. A historical candidate that is currently non-Brilliant and an intended control that is currently Brilliant remain secondary rather than being relabeled. Fixed reserves satisfy the class quotas without consulting classifier predictions. The completed audit retains **10 secondary observations: six gallery-label differences and four Brilliant control attempts**. Those are not part of the 200 primary metrics.
 
 This is a test within five established-player accounts, not new-player, beginner, account-independent or ordinary-game-distribution validation. Chess.com’s [published criteria](https://support.chess.com/en/articles/8572705-how-are-moves-classified-what-is-a-blunder-or-brilliant-etc) describe player-strength dependence. This model has no rating predictor or learned beginner curve. [Game Review documentation](https://support.chess.com/en/articles/8584089-how-does-game-review-work) explains why engine settings and deeper reviews can affect labels; current visible observations and historical gallery evidence retain distinct roles.
 
@@ -42,7 +44,7 @@ The validated domain remains SF18/300k. Native Mute Chess SF19 and variable brow
 
 ## Fixed candidates and comparisons
 
-The primary forest has 64 trees, maximum depth 6, minimum eight distinct original moves per leaf, 12 randomly sampled split features, seed 20261103 and non-Brilliant training cost 5. It uses 75 semantic values plus 75 missing indicators. Whole-game/identical-before-position groups are bootstrapped; current/prior windows stay linked. The final full-data model is frozen at SHA-256:
+The comparison forest has 64 trees, maximum depth 6, minimum eight distinct original moves per leaf, 12 randomly sampled split features, seed 20261103 and non-Brilliant training cost 5. It uses 75 semantic values plus 75 missing indicators. Whole-game/identical-before-position groups are bootstrapped; current/prior windows stay linked. The final full-data model is frozen at SHA-256:
 
 ```text
 44704ac06378d3f671a4eed959e21959f759c0437c71af1f9119d1081293c0b7
@@ -50,16 +52,27 @@ The primary forest has 64 trees, maximum depth 6, minimum eight distinct origina
 
 The exact [feature definitions](reference/v5/learning-v5/FEATURE-DEFINITIONS.json), [model](reference/v5/learning-v5/forest-diagnostic/forest-full.json), [training protocol](reference/v5/learning-v5/forest-diagnostic/PROTOCOL.json) and [standalone extractor freeze](reference/v5/astra/v5/fresh-extractor/FREEZE.json) are authoritative. Hard quality/offer gates and the **5/6 raw mean-leaf threshold in each window** are unchanged. Mean leaf fractions are not calibrated probabilities. Required engine confidence is distinct from optional proof-feature unknownness.
 
-S is the separate frozen history comparator, using confirmed unsuppressed A decisions for prior origins. Its effective temporal source SHA is `16faa288afc2e18716cdc7135efa8275712cd3b12624e4f696f33f25f6b3fe29`. Its [contract](reference/v5/astra/v5/sequence-reference/PROSPECTIVE-CONTRACT.md) and [effective source freeze](reference/v5/astra/v5/sequence-reference/source-freeze-castling-addendum.json) define repeat-offer suppression and the two finite forcing exceptions. It is not an extra hidden forest gate. A and v4 are saved secondary comparator outputs.
+S is the frozen base History Rule, using confirmed unsuppressed A decisions for prior origins. Its effective temporal source SHA is `16faa288afc2e18716cdc7135efa8275712cd3b12624e4f696f33f25f6b3fe29`. Its [contract](reference/v5/astra/v5/sequence-reference/PROSPECTIVE-CONTRACT.md) and [effective source freeze](reference/v5/astra/v5/sequence-reference/source-freeze-castling-addendum.json) define repeat-offer suppression and the two finite forcing exceptions. It is not an extra hidden forest gate. A and v4 are saved secondary comparator outputs.
 
 The peer is **direct En Croissant annotation** on identical current saved windows. Its material-sacrifice helper and best/second-root gap are preserved. Sources are pinned at [score.ts](https://github.com/franciscoBSalgueiro/en-croissant/blob/6f2d2628f0fbe11cb62a7dd2f9c102bb52907d53/src/utils/score.ts) and [chess.rs](https://github.com/franciscoBSalgueiro/en-croissant/blob/6f2d2628f0fbe11cb62a7dd2f9c102bb52907d53/src-tauri/src/chess.rs), verified byte-identical to [v0.15.1](https://github.com/franciscoBSalgueiro/en-croissant/releases/tag/v0.15.1). [The equivalence record](ec-latest-stable-check.json) contains the source hashes. This is a classifier comparison under common evidence, not identical whole-app engine behavior. EC with shared-window confirmation is also saved and happens to give the same test counts; it never silently replaces direct EC. Mobile Maia is unchanged.
 
-## Outcomes and uncertainty
+
+## Material-recovery refinement: fixed retrospective audit
+
+The [new guard plan](data/history-recovery-plan.json), [candidate](reference/history-recovery/candidate.py), [material proof](reference/history-recovery/probe.py) and [path/source map](reference/history-recovery/SOURCE-MAPPING.json) specify one conjunction; there was no ID/account/label filter in prediction and no model refit. This is a label-informed refinement, not a new untouched test. Both former partitions are development for this rule. No unseen validation is yet available.
+
+The guard only acts on existing S awards for non-checking captures that do not face check or promote. Every qualifying offer must be of an unmoved piece and have identical legal attacker/victim geometry and same-square liability on a before-position clone whose side is flipped and en-passant square cleared. Both completed **after-position first roots** must accept qualifying old offers. For every qualifying acceptance, one quiet noncapturing/nonpromoting response must cover **every legal defense**, with a legal nonchecking, nonterminal recovery capture stabilized against maximum same-square recapture liability. Its mover material must reach at least pre-target balance minus 100. All tests share 100,000 nodes/one second. Any incompleteness or exhaustion leaves the original S decision unchanged. Exact definitions are in the [README](README.md#added-guard-existing-offer-material-recovery).
+
+The retrospective [1,048-row outcomes](data/history-recovery-results.json) change exactly two non-Brilliant awards: nelsi 18...hxg6 (`171488501692:36`) and hansen 15...hxg5 (`173517772799:30`). Original S: 400TP/113FN/24FP/511TN; refined: 400TP/113FN/22FP/513TN. All 400 previously matching awards remain, with zero proof unknowns. The [independent audit](data/history-recovery-audit.json) replays the source and checks the legal witnesses, all four defenses after Qc5+ and all 43 after Ba6, and the final SEE-adjusted material condition.
+
+Within the historical 200 subset, the new result is 78TP/22FN/3FP/97TN. This is a **retrospective subset replay**, not a replacement independent score. Keep the untouched original S 78/22/5/95 below and do not quote the refined subset as fresh validation. The two targeted corrections and no observed lost true awards support a narrow development claim; they do not establish future sensitivity, deployment precision or a 90% agreement result.
+
+## Historical frozen-rule outcomes and uncertainty
 
 | Candidate | TP | FN | FP | TN | Agreement |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Frozen forest | 55 | 45 | 1 | 99 | 77.0% |
-| S | 78 | 22 | 5 | 95 | 86.5% |
+| Mute History Rule S — recommended | 78 | 22 | 5 | 95 | 86.5% |
+| Selective forest — comparison | 55 | 45 | 1 | 99 | 77.0% |
 | EC direct | 26 | 74 | 2 | 98 | 62.0% |
 | A | 78 | 22 | 6 | 94 | 86.0% |
 | v4 | 78 | 22 | 6 | 94 | 86.0% |
@@ -77,9 +90,9 @@ Development diagnostic results are not pooled with the fresh test. Forest groupe
 
 ## Figures, native assets and illustration truth
 
-The [two-panel chart source](reader-figures.py) reads only the completed test summary, asserts 200 moves/106 games and class denominators of 100, and writes PNG/SVG plus a plotted-count/input-hash receipt. It uses Mute Moss colors `#C7CFBA` and `#668478`, graphite text and native gold `#D9B25F`. Recognition and extra controls have separate panels; precision is not plotted as agreement.
+The [chart source](reader-figures.py) distinguishes the retrospective refinement replay from preserved historical test charts, asserts appropriate class denominators (513/535 versus 100/100), and writes PNG/SVG plus plotted-count/input-hash receipts. It uses Mute Moss colors `#C7CFBA` and `#668478`, graphite text and native gold `#D9B25F`. Recognition and extra controls have separate panels; precision is not plotted as agreement.
 
-The successful illustration is **Hansen 17.Bxh7+**, fresh-test game `167741829524`, ply 33. Current Chess.com Brilliant and the unchanged forest award agree. The public PGN verifies both **Bxh7+ Kxh7** as actual moves; [the receipt](visuals/fresh-success-proof.json) includes their legal states and PGN hash. Only Bxh7+ is the labeled target. Acceptance is not claimed forced; no compensation or mate line is invented.
+The retained History Rule illustration is **Hansen 17.Bxh7+**, fresh-test game `167741829524`, ply 33. Current Chess.com Brilliant and the unchanged History Rule award agree (the comparison forest also awards it). The public PGN verifies both **Bxh7+ Kxh7** as actual moves; [the receipt](visuals/fresh-success-proof.json) includes their legal states and PGN hash. Only Bxh7+ is the labeled target. Acceptance is not claimed forced; no compensation or mate line is invented.
 
 Hikaru’s development **27.Bg2** is a documented forest miss that S recognizes. Its subsequent **...Bxb1 Rxb1** moves are a conditional legal illustration, not asserted game replies. Both outside pawn-winning references remain excluded from all 1,048 benchmark moves; the forest withholds both the Excellent Ndxe5 and Brilliant Nxd5 reference. Those capture lines are also conditional, not forced.
 
@@ -102,3 +115,9 @@ A bounded [TypeScript reference port](reference/v5/README.md#native-typescript-p
 Native module SHA-256: `10ac40a04d29492e85d09ddfbd0ac5c8ab32f64a8dce28cb6d78cd1cecbfb499`; classifier SHA-256: `be222880d7158a6ae3604bd482cb1e218d69c59ee815ea0a0c6ad34e4f1b18c9`. The [source/path audit](reference/v5/native/PATH-PROVENANCE.json) and [parity trace](reference/v5/native/parity.json) accompany the readable reference. No merge or deployment is claimed. **SF19 and variable browser budgets remain unvalidated.**
 
 The earlier 618-move report is archived by [commit c6969d1](https://github.com/Dash1971/mute-chess-research/blob/c6969d1/studies/brilliant-moves/REPORT.md); no duplicate historical database is required.
+
+The two new native-board recovery animations are generated from [cases-recovery.json](visuals/cases-recovery.json). Every move is legal; only the first target has the recorded Best label. Their subsequent branches are conditional illustrations, not asserted game moves or unique forced choices. The complete 4/43-defense certificates live in the audit, not merely in the displayed branch.
+
+## Native refined-rule reference
+
+The readable [native History Rule and recovery integration](reference/native-history-v7/ui/analyse/src/noSweatClassify.ts), [source mapping](reference/native-history-v7/SOURCE-MAPPING.json), [summary](reference/native-history-v7/SUMMARY.json) and [parity trace](reference/native-history-v7/parity.json) preserve the completed 1,048-input comparison: zero decision, guard-certificate or full EC-result differences, 57 focused checks. This is parity on retrospective development evidence, not an additional unseen test. The [six](data/history-origin-six.json) and [ten](data/history-origin-completion.json) supporting history-origin snapshots remain separate; no core window is replaced. Native timed SF19 and variable budgets remain unvalidated.

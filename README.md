@@ -2,19 +2,19 @@
 
 Readable studies, visual explanations and the evidence behind Mute Chess's design decisions.
 
-## Brilliant moves: what deserves the badge?
+## Brilliant moves: History Rule with a material-recovery guard
 
-![Mute candidates and En Croissant on a fixed, fresh 200-move test.](studies/brilliant-moves/figures/fresh-test-results.png)
+![The refined History Rule on the reviewed development corpus.](studies/brilliant-moves/figures/history-recovery-replay.png)
 
-**[Read: When should a move earn Brilliant? →](studies/brilliant-moves/REPORT.md)**
+**[Read: Adopt the Mute History Rule—with a material-recovery guard →](studies/brilliant-moves/REPORT.md)**
 
-Our selective candidate recognized **55 of 100 Chess.com Brilliants**, compared with En Croissant’s 26, and made **1 extra award among 100 controls**, versus 2. That is about **2.1 times as many recognized Brilliants, with fewer extra awards in this test**. Its 55% recognition and 77% overall agreement belong beside its 98.2% sample badge precision (55/56 awards; descriptive 95% interval 90.6–99.7%). It misses 45 Brilliants; this is no 90% agreement claim.
+We recommend the **Mute History Rule with a narrow material-recovery guard**. In the 1,048-move development replay it retains **all 400 previously matched Chess.com Brilliants** and removes exactly two extra awards; **22 extras and 113 misses remain**. The guard was designed using these positions and labels: **it has no new unseen validation yet**.
 
-The unified study separates **848 development moves from 439 games** and a **fresh 200-move test from 106 games**: **1,048 moves / 545 games** across five accounts. The separate history rule recognizes 78/100 with 5 extra awards. These balanced, challenging samples do not establish ordinary-game frequency or deployment precision.
+The preserved independent 200-move test of the **unrefined** History Rule recognized 78/100 Brilliants with 5 extra awards, 86.5% agreement and 94.0% sample badge precision. The refined 78/3 result on that same subset is retrospective reuse, **not a revised untouched test score**. The full corpus covers 545 games; comparison models and original evidence remain inspectable.
 
-Native TypeScript has matching reference outputs on the 1,048 recorded SF18 inputs. **SF19 and changing browser budgets remain unvalidated; no merge or deployment is claimed. Mobile Maia remains unchanged.**
+Two native-board illustrations show why ordinary hxg6/hxg5 recoveries are now withheld while all 400 previously matched awards remain. This does not guarantee that no future Brilliant will be lost. **Adoption is recommended, not claimed deployed. Native SF19 and variable browser budgets remain unvalidated. Mobile Maia stays unchanged.**
 
-[Exact algorithm](studies/brilliant-moves/README.md) · [Methods and sources](studies/brilliant-moves/METHODS.md) · [Move-level evidence](studies/brilliant-moves/moves.csv) · [Earlier 618-move report](https://github.com/Dash1971/mute-chess-research/blob/c6969d1/studies/brilliant-moves/REPORT.md)
+[Exact rules](studies/brilliant-moves/README.md) · [Methods and evidence roles](studies/brilliant-moves/METHODS.md) · [Refinement outcomes](studies/brilliant-moves/data/history-recovery-results.json) · [Original move-level evidence](studies/brilliant-moves/moves.csv) · [Earlier 618-move report](https://github.com/Dash1971/mute-chess-research/blob/c6969d1/studies/brilliant-moves/REPORT.md)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 

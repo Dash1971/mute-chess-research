@@ -1,0 +1,37 @@
+{
+  "source_sha256": "f9fcbd1e9fdf1bdda11c700cabac239a4751ef88a5a16704b62587373d808d46",
+  "plotted_counts": [
+    {
+      "classifier": "refined",
+      "panel": "positive",
+      "count": 400,
+      "denominator": 513
+    },
+    {
+      "classifier": "ec_direct",
+      "panel": "positive",
+      "count": 139,
+      "denominator": 513
+    },
+    {
+      "classifier": "refined",
+      "panel": "negative",
+      "count": 22,
+      "denominator": 535
+    },
+    {
+      "classifier": "ec_direct",
+      "panel": "negative",
+      "count": 9,
+      "denominator": 535
+    }
+  ],
+  "native_colors": {
+    "moss": "#668478",
+    "light": "#C7CFBA",
+    "gold": "#D9B25F",
+    "ink": "#172723",
+    "pale": "#EDF1EA",
+    "muted": "#496357"
+  }
+}

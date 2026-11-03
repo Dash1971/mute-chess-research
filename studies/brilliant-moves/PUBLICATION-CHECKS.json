@@ -1,5 +1,5 @@
 {
-  "scope": "Current1048corpus/public reference package; fixedfresh200metrics, noengine/refit duringpublicationstaging.",
+  "scope": "Refined History Rule publication. All1048are development for recoveryguard; oldfresh200keysbelow describe historical unrefinedS andoriginalcomparators ONLY.",
   "primary_moves": 1048,
   "games": 545,
   "positions": 47118,
@@ -37,10 +37,56 @@
   "native_recorded_input_parity_cases": 1048,
   "native_SF19_variable_budgets_validated": false,
   "data_privacy_audit": "DATA-PROVENANCE.json and data/source-hash-audit.json",
-  "publication_state": "STAGED FOR OWNER REVIEW; no commit/push/merge/deploy",
+  "publication_state": "READY FOR OWNER REVIEW; no commit/push by research agent",
   "new_reference_private_absolute_path_literals": 0,
   "source_path_mapping_display_redacted": true,
   "public_csv_line_endings": "LF",
   "public_csv_parsed_values_unchanged": true,
-  "git_diff_check": "pass"
+  "git_diff_check": "pass",
+  "refined_history_TP_FN_FP_TN": [
+    400,
+    113,
+    22,
+    513
+  ],
+  "original_history_all1048_TP_FN_FP_TN": [
+    400,
+    113,
+    24,
+    511
+  ],
+  "refined_development_moves": 1048,
+  "new_unseen_refinement_validation_moves": 0,
+  "historical_unrefined_S_test_TP_FN_FP_TN": [
+    78,
+    22,
+    5,
+    95
+  ],
+  "refined_historical200_replay_NOT_independent_test": [
+    78,
+    22,
+    3,
+    97
+  ],
+  "exact_changed_keys": [
+    "171488501692:36",
+    "173517772799:30"
+  ],
+  "refinement_removed_true_awards": 0,
+  "refinement_removed_false_awards": 2,
+  "refinement_unknown": 0,
+  "native_refined_parity_cases": 1048,
+  "native_refined_decision_differences": 0,
+  "native_refined_certificate_differences": 0,
+  "native_refined_EC_differences": 0,
+  "native_refined_focused_checks": 57,
+  "published_standalone_guard_replay": {
+    "cases": 1048,
+    "removed_true": 0,
+    "removed_false": 2,
+    "unknown": 0,
+    "verified_by": "Root final replay using published source and installed python-chess"
+  },
+  "recovery_plan_original_sha256": "1d95afbf290345ae9eeefa611f3286f07dfed8ab5da60d2aef202866d89b703f"
 }
