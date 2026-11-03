@@ -121,3 +121,7 @@ The two new native-board recovery animations are generated from [cases-recovery.
 ## Native refined-rule reference
 
 The readable [native History Rule and recovery integration](reference/native-history-v7/ui/analyse/src/noSweatClassify.ts), [source mapping](reference/native-history-v7/SOURCE-MAPPING.json), [summary](reference/native-history-v7/SUMMARY.json) and [parity trace](reference/native-history-v7/parity.json) preserve the completed 1,048-input comparison: zero decision, guard-certificate or full EC-result differences, 57 focused checks. This is parity on retrospective development evidence, not an additional unseen test. The [six](data/history-origin-six.json) and [ten](data/history-origin-completion.json) supporting history-origin snapshots remain separate; no core window is replaced. Native timed SF19 and variable budgets remain unvalidated.
+
+## Technical archives
+
+Earlier source/evidence releases remain available without becoming part of the current reader narrative: [the feasibility study](../brilliant-moves-pilot-2026-11-03/REPORT.md), [tactical references](../brilliant-moves-followup-2026-11-03/README.md), [development-reference release](../brilliant-moves-2026-11-03/REPORT.md), and [the earlier report at commit c6969d1](https://github.com/Dash1971/mute-chess-research/blob/c6969d1/studies/brilliant-moves/REPORT.md). Their original denominators and validation roles are retained.

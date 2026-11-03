@@ -34,5 +34,6 @@
   "target": "167741829524:33",
   "only_target_is_classified": true,
   "actual_vs_forced": "Bxh7+ Kxh7 are actualPGNmoves; acceptance not claimed forced.",
-  "figure_inputs_sha256": "6bfe2daa741d22c85f106d90ef8abd39f309e5bbec1a3ef4376b3a7ea34a37b7"
+  "figure_inputs_sha256": "6bfe2daa741d22c85f106d90ef8abd39f309e5bbec1a3ef4376b3a7ea34a37b7",
+  "current_reader_chart": "Passed: Mute Chess / En Croissant,400/513vs139/513 and22/535vs9/535,87.1%vs63.5%agreement; studied-example wording and Methods footnote; no clipped labels."
 }

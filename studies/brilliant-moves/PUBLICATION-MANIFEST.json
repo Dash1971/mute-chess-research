@@ -1,6 +1,6 @@
 {
-  "scope": "Unified1048moves/545games, all development for refined HistoryRule+recoveryguard. Historical independent200test evidence applies to unrefinedS ONLY; zero unseen guardvalidation. NativeMoss/Cburnett illustrations and frozen references/source-path maps. Earlier618release archivedviaGitc6969d1; no duplicatehistoricalDB. Hashesexclude thismanifest itself.",
-  "generated_at": "2026-11-03T12:19:39.013555+00:00",
+  "scope": "Unified1048-move/545-game study, currentHistoryRule policy. Readerfrontdoorisgoal/method/rules/results/recommendation; technicalmethods preserveall retrospective/development/historicalvalidationroles. No claim independentvalidationofguard ordeployment. Hashesexclude thismanifest itself.",
+  "generated_at": "2026-11-03T12:43:21.149318+00:00",
   "files": [
     {
       "path": "COHORT-FREEZE.json",
@@ -19,8 +19,8 @@
     },
     {
       "path": "METHODS.md",
-      "bytes": 19390,
-      "sha256": "74b14057f8e0d0cc3d995e3c951c71ce5ad0bd8d5a5d4707a7cdc6f61fafa984"
+      "bytes": 19941,
+      "sha256": "3eb984a0ef47ca24cff6bf49e226eda689c9fee737ee4230a7a0194faaf03a82"
     },
     {
       "path": "PLAN.json",
@@ -29,8 +29,8 @@
     },
     {
       "path": "PUBLICATION-CHECKS.json",
-      "bytes": 2426,
-      "sha256": "ed9b50b3cee25ad26247c13f5813df8d5453bcab199f539f28d5c83e990f836b"
+      "bytes": 3319,
+      "sha256": "c962521ce255e8f58c495f3c5058ae0d73678c1a2966df145cff3426225229c9"
     },
     {
       "path": "README.md",
@@ -39,8 +39,8 @@
     },
     {
       "path": "REPORT.md",
-      "bytes": 5731,
-      "sha256": "1832125ba90b028b55f4d9b711926da12470bedf27b877de4fc9af5956098be2"
+      "bytes": 3844,
+      "sha256": "b7e95c426cbda363483353e40ec3c93260891c29ff4ac2ec0eddde160bc573c4"
     },
     {
       "path": "SUMMARY.json",
@@ -275,7 +275,7 @@
     {
       "path": "figures/fresh-test-results.svg",
       "bytes": 14341,
-      "sha256": "893089c94456085e2400c7962f61c1d232f197a8d397987c9c71562f23689c35"
+      "sha256": "320c495d076b391a91989cfd7515a674a611c195251dda4e8744905b1f7ce69d"
     },
     {
       "path": "figures/history-recovery-replay-audit.json",
@@ -284,13 +284,13 @@
     },
     {
       "path": "figures/history-recovery-replay.png",
-      "bytes": 80445,
-      "sha256": "d7e9594001aedd0fbd4ddde136713e4cdffd058f3d5241dcccc38afd933b10f5"
+      "bytes": 72467,
+      "sha256": "1d87a28ab2ca16999623565ffdd7f8c37530224c889fafaf9a6735ab8915ddee"
     },
     {
       "path": "figures/history-recovery-replay.svg",
-      "bytes": 12307,
-      "sha256": "6f1a89599ef2e6bfdf91c56e47218f0d7a0897ebd96524a1637856e9bcfd1cd1"
+      "bytes": 12168,
+      "sha256": "95109ab5e130e01ffa26690872cefdd2026224bcac5479fdb94e9835dc000d64"
     },
     {
       "path": "figures/history-vs-ec-audit.json",
@@ -305,7 +305,7 @@
     {
       "path": "figures/history-vs-ec.svg",
       "bytes": 12794,
-      "sha256": "888e54920da7498fb5b5f034d6335a4168b65df87efb60ee7da790a035ad2cf2"
+      "sha256": "e21e06f072f3f1cdb4dd7f3f3059b8240b1f0c1bdadf089858e066ae0da36aa3"
     },
     {
       "path": "figures/pawn-win-brilliant-after.png",
@@ -369,8 +369,8 @@
     },
     {
       "path": "figures/visual-qa-v5.json",
-      "bytes": 993,
-      "sha256": "9b06dac924054c5a0ba489deb1c366fe499cd58d404ac3c1fe343d3488d50576"
+      "bytes": 1178,
+      "sha256": "fb6106d191fc32e2902bff4793d4d4d3bae79ad0de6094db1a0f4c7424f7357e"
     },
     {
       "path": "hero-case.json",
@@ -424,8 +424,8 @@
     },
     {
       "path": "reader-figures.py",
-      "bytes": 5719,
-      "sha256": "f50e81f98978b5296fd231534d6417db59d04f25f75e5ea652d3d0df31812eb6"
+      "bytes": 5580,
+      "sha256": "aca34b1099c84e9aa3fc5649a37075ff73bf2caadedcc7cc6a136cdbbfd0e356"
     },
     {
       "path": "reference/AGPL-3.0.txt",

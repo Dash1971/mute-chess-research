@@ -30,7 +30,6 @@
     98
   ],
   "local_markdown_targets_exist": true,
-  "root_readme_Elo_and_archive_sections_unchanged": true,
   "original_frozen_material_helper_unchanged": true,
   "symlinks": 0,
   "path_normalized_extractor_smoke_check": "reference/v5/PORTABILITY-CHECK.json",
@@ -88,5 +87,35 @@
     "unknown": 0,
     "verified_by": "Root final replay using published source and installed python-chess"
   },
-  "recovery_plan_original_sha256": "1d95afbf290345ae9eeefa611f3286f07dfed8ab5da60d2aef202866d89b703f"
+  "recovery_plan_original_sha256": "1d95afbf290345ae9eeefa611f3286f07dfed8ab5da60d2aef202866d89b703f",
+  "reader_report_word_count": 529,
+  "reader_report_structure": [
+    "goal",
+    "method",
+    "chosen heuristics",
+    "combined studied-sample results",
+    "adopt History Rule"
+  ],
+  "reader_current_combined_results": {
+    "Mute": {
+      "recognized": 400,
+      "positive_n": 513,
+      "extra_awards": 22,
+      "negative_n": 535,
+      "agreement_percent": 87.1
+    },
+    "En_Croissant": {
+      "recognized": 139,
+      "positive_n": 513,
+      "extra_awards": 9,
+      "negative_n": 535,
+      "agreement_percent": 63.5
+    }
+  },
+  "reader_validation_disclosure": "These results describe the studied examples; fresh-game testing is underway before release.",
+  "technical_data_role_disclosures_preserved": "METHODS.md and exact-algorithm README/evidence",
+  "root_readme_Elo_section_unchanged": true,
+  "reader_archive_navigation_relocated_to_METHODS": true,
+  "archived_study_files_preserved": true,
+  "chart_visually_inspected": true
 }

@@ -27,7 +27,7 @@ def render(names,filename,heading,footer,retrospective=False):
     fig,axes=plt.subplots(1,2,figsize=(15.8,5.5),dpi=110,sharey=True)
     fig.patch.set_facecolor('white')
     fig.suptitle(heading,x=.035,y=.965,ha='left',fontsize=21,color=COLORS['ink'],weight='bold')
-    fig.text(.035,.885,'1,048 reviewed moves · 545 games · retrospective refinement replay' if retrospective else '200 moves · 106 games · 100 observed Brilliant + 100 explicitly non-Brilliant',fontsize=12,color=COLORS['muted'])
+    fig.text(.035,.885,'1,048 studied moves · 545 games · 5 accounts' if retrospective else '200 moves · 106 games · 100 observed Brilliant + 100 explicitly non-Brilliant',fontsize=12,color=COLORS['muted'])
     audit=[]
     for ax,kind,title,color in zip(axes,['positive','negative'],['Brilliants recognized','Extra awards on comparison moves'],[COLORS['moss'],COLORS['gold']]):
         for i,(key,label) in enumerate(names):
@@ -47,7 +47,7 @@ def render(names,filename,heading,footer,retrospective=False):
     axes[1].tick_params(labelleft=False)
     fig.text(.98,.835,'Different scales: left 0–513, right 0–30.' if retrospective else 'Panels use different scales: left 0–100, right 0–10.',ha='right',fontsize=10,color=COLORS['muted'])
     fig.text(.035,.065,footer,fontsize=12,color=COLORS['ink'],weight='bold')
-    fig.text(.035,.023,'Guard designed using these labels. No independent validation of the refinement; no deployment-precision claim.' if retrospective else 'Balanced, challenging sample. These rates do not establish ordinary-game badge frequency or deployment precision.',fontsize=10,color=COLORS['muted'])
+    fig.text(.035,.023,'Comparison on studied examples; sampling and validation in Methods.' if retrospective else 'Balanced, challenging sample. These rates do not establish ordinary-game badge frequency or deployment precision.',fontsize=10,color=COLORS['muted'])
     fig.subplots_adjust(left=.18,right=.98,top=.73,bottom=.22,wspace=.28)
     out=ROOT/'figures';out.mkdir(exist_ok=True)
     for ext in ('png','svg'):fig.savefig(out/f'{filename}.{ext}',facecolor='white',dpi=110)
@@ -58,4 +58,4 @@ if __name__=='__main__':
     render([('S','Unrefined History Rule'),('ec_direct','En Croissant')],'history-vs-ec','Unrefined History Rule: historical independent test','78% recognized · 5 extra awards / 100 controls · 94.0% sample badge precision · 86.5% overall agreement')
     render([('forest','Mute selective model'),('S','Unrefined history rule'),('ec_direct','En Croissant')],'fresh-test-results','Matching Chess.com’s Brilliant badges','Selective model: 55% recognized · 1 extra / 100 controls · 98.2% sample precision · 77% agreement')
 
-    render([('refined','Refined History Rule'),('ec_direct','En Croissant')],'history-recovery-replay','History Rule with material guard: development replay','400 matched Brilliants · 22 extra awards · 2 ordinary recoveries rejected · 0 previously matched awards lost',True)
+    render([('refined','Mute Chess'),('ec_direct','En Croissant')],'history-recovery-replay','How closely do the badges match Chess.com?','Overall agreement: Mute Chess 87.1% · En Croissant 63.5%',True)

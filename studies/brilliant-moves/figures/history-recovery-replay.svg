@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-11-03T21:17:51.158692</dc:date>
+    <dc:date>2026-11-03T21:42:18.351548</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -42,7 +42,7 @@ z
      <g id="line2d_1">
       <path d="M 204.768 308.88 
 L 204.768 106.92 
-" clip-path="url(#pbbf3efa048)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p67670ae066)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_2"/>
      <g id="text_1">
@@ -53,7 +53,7 @@ L 204.768 106.92
      <g id="line2d_3">
       <path d="M 282.576556 308.88 
 L 282.576556 106.92 
-" clip-path="url(#pbbf3efa048)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p67670ae066)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_4"/>
      <g id="text_2">
@@ -64,7 +64,7 @@ L 282.576556 106.92
      <g id="line2d_5">
       <path d="M 360.385113 308.88 
 L 360.385113 106.92 
-" clip-path="url(#pbbf3efa048)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p67670ae066)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_6"/>
      <g id="text_3">
@@ -75,7 +75,7 @@ L 360.385113 106.92
      <g id="line2d_7">
       <path d="M 438.193669 308.88 
 L 438.193669 106.92 
-" clip-path="url(#pbbf3efa048)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p67670ae066)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_8"/>
      <g id="text_4">
@@ -86,7 +86,7 @@ L 438.193669 106.92
      <g id="line2d_9">
       <path d="M 516.002226 308.88 
 L 516.002226 106.92 
-" clip-path="url(#pbbf3efa048)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p67670ae066)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_10"/>
      <g id="text_5">
@@ -97,7 +97,7 @@ L 516.002226 106.92
      <g id="line2d_11">
       <path d="M 603.925895 308.88 
 L 603.925895 106.92 
-" clip-path="url(#pbbf3efa048)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#p67670ae066)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_12"/>
      <g id="text_6">
@@ -112,7 +112,7 @@ L 603.925895 106.92
     <g id="ytick_1">
      <g id="line2d_13"/>
      <g id="text_8">
-      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #172723" x="194.768" y="168.554715" transform="rotate(-0 194.768 168.554715)">Refined History Rule</text>
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #172723" x="194.768" y="168.554715" transform="rotate(-0 194.768 168.554715)">Mute Chess</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -128,7 +128,7 @@ L 603.925895 142.921565
 L 603.925895 185.069739 
 L 204.768 185.069739 
 z
-" clip-path="url(#pbbf3efa048)" style="fill: #edf1ea"/>
+" clip-path="url(#p67670ae066)" style="fill: #edf1ea"/>
    </g>
    <g id="patch_4">
     <path d="M 204.768 230.730261 
@@ -136,7 +136,7 @@ L 603.925895 230.730261
 L 603.925895 272.878435 
 L 204.768 272.878435 
 z
-" clip-path="url(#pbbf3efa048)" style="fill: #edf1ea"/>
+" clip-path="url(#p67670ae066)" style="fill: #edf1ea"/>
    </g>
    <g id="patch_5">
     <path d="M 204.768 142.921565 
@@ -144,7 +144,7 @@ L 516.002226 142.921565
 L 516.002226 185.069739 
 L 204.768 185.069739 
 z
-" clip-path="url(#pbbf3efa048)" style="fill: #668478; stroke: #668478; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p67670ae066)" style="fill: #668478; stroke: #668478; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 204.768 230.730261 
@@ -152,7 +152,7 @@ L 312.921894 230.730261
 L 312.921894 272.878435 
 L 204.768 272.878435 
 z
-" clip-path="url(#pbbf3efa048)" style="fill: #668478; stroke: #668478; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#p67670ae066)" style="fill: #668478; stroke: #668478; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="text_10">
     <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172723" x="519.892654" y="167.372605" transform="rotate(-0 519.892654 167.372605)">400 / 513</text>
@@ -178,7 +178,7 @@ z
      <g id="line2d_15">
       <path d="M 715.690105 308.88 
 L 715.690105 106.92 
-" clip-path="url(#pda3e45b83a)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pfdabe6a163)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_16"/>
      <g id="text_13">
@@ -189,7 +189,7 @@ L 715.690105 106.92
      <g id="line2d_17">
       <path d="M 848.742737 308.88 
 L 848.742737 106.92 
-" clip-path="url(#pda3e45b83a)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pfdabe6a163)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_18"/>
      <g id="text_14">
@@ -200,7 +200,7 @@ L 848.742737 106.92
      <g id="line2d_19">
       <path d="M 981.795368 308.88 
 L 981.795368 106.92 
-" clip-path="url(#pda3e45b83a)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pfdabe6a163)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_20"/>
      <g id="text_15">
@@ -211,7 +211,7 @@ L 981.795368 106.92
      <g id="line2d_21">
       <path d="M 1114.848 308.88 
 L 1114.848 106.92 
-" clip-path="url(#pda3e45b83a)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
+" clip-path="url(#pfdabe6a163)" style="fill: none; stroke: #dbe3db; stroke-width: 0.7; stroke-linecap: square"/>
      </g>
      <g id="line2d_22"/>
      <g id="text_16">
@@ -236,7 +236,7 @@ L 7834.005895 142.921565
 L 7834.005895 185.069739 
 L 715.690105 185.069739 
 z
-" clip-path="url(#pda3e45b83a)" style="fill: #edf1ea"/>
+" clip-path="url(#pfdabe6a163)" style="fill: #edf1ea"/>
    </g>
    <g id="patch_9">
     <path d="M 715.690105 230.730261 
@@ -244,7 +244,7 @@ L 7834.005895 230.730261
 L 7834.005895 272.878435 
 L 715.690105 272.878435 
 z
-" clip-path="url(#pda3e45b83a)" style="fill: #edf1ea"/>
+" clip-path="url(#pfdabe6a163)" style="fill: #edf1ea"/>
    </g>
    <g id="patch_10">
     <path d="M 715.690105 142.921565 
@@ -252,7 +252,7 @@ L 1008.405895 142.921565
 L 1008.405895 185.069739 
 L 715.690105 185.069739 
 z
-" clip-path="url(#pda3e45b83a)" style="fill: #d9b25f; stroke: #172723; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pfdabe6a163)" style="fill: #d9b25f; stroke: #172723; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
     <path d="M 715.690105 230.730261 
@@ -260,7 +260,7 @@ L 835.437474 230.730261
 L 835.437474 272.878435 
 L 715.690105 272.878435 
 z
-" clip-path="url(#pda3e45b83a)" style="fill: #d9b25f; stroke: #172723; stroke-width: 0.7; stroke-linejoin: miter"/>
+" clip-path="url(#pfdabe6a163)" style="fill: #d9b25f; stroke: #172723; stroke-width: 0.7; stroke-linejoin: miter"/>
    </g>
    <g id="text_18">
     <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172723" x="1016.389053" y="167.372605" transform="rotate(-0 1016.389053 167.372605)">22 / 535</text>
@@ -273,26 +273,26 @@ z
    </g>
   </g>
   <g id="text_21">
-   <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172723" x="39.816" y="29.816719" transform="rotate(-0 39.816 29.816719)">History Rule with material guard: development replay</text>
+   <text style="font-weight: 700; font-size: 21px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172723" x="39.816" y="29.816719" transform="rotate(-0 39.816 29.816719)">How closely do the badges match Chess.com?</text>
   </g>
   <g id="text_22">
-   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #496357" x="39.816" y="45.54" transform="rotate(-0 39.816 45.54)">1,048 reviewed moves · 545 games · retrospective refinement replay</text>
+   <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #496357" x="39.816" y="45.54" transform="rotate(-0 39.816 45.54)">1,048 studied moves · 545 games · 5 accounts</text>
   </g>
   <g id="text_23">
    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #496357" x="1114.848" y="65.34" transform="rotate(-0 1114.848 65.34)">Different scales: left 0–513, right 0–30.</text>
   </g>
   <g id="text_24">
-   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172723" x="39.816" y="370.26" transform="rotate(-0 39.816 370.26)">400 matched Brilliants · 22 extra awards · 2 ordinary recoveries rejected · 0 previously matched awards lost</text>
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #172723" x="39.816" y="370.26" transform="rotate(-0 39.816 370.26)">Overall agreement: Mute Chess 87.1% · En Croissant 63.5%</text>
   </g>
   <g id="text_25">
-   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #496357" x="39.816" y="386.892" transform="rotate(-0 39.816 386.892)">Guard designed using these labels. No independent validation of the refinement; no deployment-precision claim.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #496357" x="39.816" y="386.892" transform="rotate(-0 39.816 386.892)">Comparison on studied examples; sampling and validation in Methods.</text>
   </g>
  </g>
  <defs>
-  <clipPath id="pbbf3efa048">
+  <clipPath id="p67670ae066">
    <rect x="204.768" y="106.92" width="399.157895" height="201.96"/>
   </clipPath>
-  <clipPath id="pda3e45b83a">
+  <clipPath id="pfdabe6a163">
    <rect x="715.690105" y="106.92" width="399.157895" height="201.96"/>
   </clipPath>
  </defs>
