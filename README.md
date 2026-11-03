@@ -2,19 +2,19 @@
 
 Readable studies, visual explanations and the evidence behind Mute Chess's design decisions.
 
-## Brilliant moves: celebrating sacrifices without praising every trade
+## Brilliant moves: what deserves the badge?
 
-![Three classifiers balance Brilliant recognition against extra awards.](studies/brilliant-moves-2026-11-03/figures/rule-comparison.png)
+![Mute and En Croissant compared with Chess.com, including reserved-game validation.](studies/brilliant-moves/figures/rule-comparison.png)
 
-**[Read: What makes a move brilliant? →](studies/brilliant-moves-2026-11-03/REPORT.md)**
+**[Read: What makes a move brilliant? →](studies/brilliant-moves/REPORT.md)**
 
-We compared **318 moves from 153 games**: 159 displayed Chess.com Brilliants and 159 explicitly non-brilliant moves. The illustrated report shows quiet sacrifices, ordinary pawn-winning combinations and the rules a program can use to distinguish them.
+We compared **618 explicitly reviewed moves from 299 games**, evenly divided between Chess.com Brilliants and non-Brilliants. Mute's proposed rule agrees with **83.0%** of those labels, versus **62.6%** for En Croissant. On separately reserved games, agreement is **76.2% versus 64.4%**.
 
-On this deliberately challenging sample, proposed Mute rules reduce extra Brilliant awards **from 42 to 6**, while recognizing **117 of 159** Chess.com Brilliants instead of 143. En Croissant recognizes 44, with 2 extra awards. The report explains this tradeoff openly; these are retrospective sample counts, not ordinary-game error rates. **Mobile Maia remains unchanged.**
+Mute recognizes **220 of 309** Chess.com Brilliants, about **2.6 times** En Croissant's 84. It also gives **16 extra awards**, versus En Croissant's 6. The illustrated report shows quiet sacrifices, material recovered on other squares, and the open rules behind those decisions.
 
-[Exact methods and open evidence](studies/brilliant-moves-2026-11-03/METHODS.md) · [Proposed Mute change](https://github.com/Dash1971/mute-chess/pull/231)
+The proposed material guard reduces Mute's extra awards **from 77 to 16**, while recognition falls **from 273 to 220**. On reserved games the guard reduces overall agreement relative to the more generous Mute rule. This is an explicit choice about badge quality; these selected-sample rates do not describe ordinary-game award frequency. **Mobile Maia remains unchanged.**
 
-Earlier evidence remains available: the [40-move feasibility pilot](studies/brilliant-moves-pilot-2026-11-03/REPORT.md) and [pawn-winning follow-up](studies/brilliant-moves-followup-2026-11-03/README.md). Their findings and recommendations describe those earlier samples.
+[Exact methods and open evidence](studies/brilliant-moves/METHODS.md) · [Move-by-move results](studies/brilliant-moves/moves.csv) · [Proposed Mute change](https://github.com/Dash1971/mute-chess/pull/231)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 
@@ -30,4 +30,8 @@ The complete study directories were copied byte for byte from [mobile-maia-resea
 
 Each study separates observations, interpretations and recommendations. Public game records, source pins, limitations and reproduction material accompany the reports. No authenticated session data or raw cookie-bearing response metadata is published.
 
-The original [AGPL-3.0-only license](LICENSE) is retained for the copied research. Third-party code and visual evidence retain their own attribution and licensing; see the brilliant study's [reference notes](studies/brilliant-moves-2026-11-03/reference/README.md). Reports and preparation used OpenAI Codex assistance. This repository is independent of Chess.com, Lichess and En Croissant.
+The original [AGPL-3.0-only license](LICENSE) is retained for the copied research. Third-party code and visual evidence retain their own attribution and licensing; see the brilliant study's [reference notes](studies/brilliant-moves/reference/README.md). Reports and preparation used OpenAI Codex assistance. This repository is independent of Chess.com, Lichess and En Croissant.
+
+## Archived studies
+
+The [feasibility study](studies/brilliant-moves-pilot-2026-11-03/REPORT.md), [tactical reference positions](studies/brilliant-moves-followup-2026-11-03/README.md) and [development-reference release](studies/brilliant-moves-2026-11-03/REPORT.md) remain available with their original denominators. Use the unified report above for the complete current comparison.
