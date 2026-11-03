@@ -1,69 +1,51 @@
-# What makes a move brilliant?
+# When should a move earn Brilliant?
 
-*618 reviewed moves. Five Chess.com accounts. An open rule anyone can inspect.*
+On a fresh 200-move test, our precision-first candidate recognized **55 of 100 Chess.com Brilliants**, compared with **26 for En Croissant**. It also made **1 extra award among 100 explicitly non-Brilliant moves**, compared with En Croissant’s 2. That is about **2.1 times as many recognized Brilliants, with fewer extra awards in this test**.
 
-A Brilliant badge makes a good move feel special. But what deserves it: a queen sacrifice, a quiet move that leaves a rook hanging, or an ordinary combination that wins a pawn?
+The tradeoff is substantial: the candidate missed **45 Brilliants**. Its **55% recognition** and **77% overall agreement** belong beside its **98.2% sample badge precision**—55 matching labels among 56 awards. That precision estimate has a descriptive 95% interval of **90.6–99.7%**. High badge precision does not mean high overall agreement.
 
-We compared open classifiers against **309 moves labeled Brilliant by Chess.com and 309 explicitly labeled otherwise**, from **299 games**. The proposed Mute Chess rule agreed with **83.0%** of those labels, compared with **62.6%** for En Croissant. On **101 moves from 48 separately reserved games**, agreement was **76.2% versus 64.4%**.
+![Fresh-test recognition and extra awards, each with a denominator of 100.](figures/fresh-test-results.png)
 
-![Agreement, Brilliant recognition and extra awards for Mute and En Croissant, with separate reserved-game results.](figures/rule-comparison.png)
+| Fixed candidate | Brilliants recognized | Extra awards | Sample badge precision | Overall agreement |
+| --- | ---: | ---: | ---: | ---: |
+| Mute selective model | **55 / 100** | **1 / 100** | **98.2%** | **77.0%** |
+| Mute history rule | 78 / 100 | 5 / 100 | 94.0% | 86.5% |
+| En Croissant: direct annotation | 26 / 100 | 2 / 100 | 92.9% | 62.0% |
 
-Mute recognized **220 of 309** Chess.com Brilliants, compared with **84** for En Croissant—about **2.6 times as many**. It also awarded Brilliant to **16 of 309** explicitly non-Brilliant moves, compared with **6** for En Croissant. These are disagreements with observed labels, not proof that either site's chess judgment is objectively wrong.
+The research corpus contains **1,048 moves from 545 games**: 848 development moves from 439 games, and this separate 200-move test from 106 games. All five accounts—nelsi, hansen, KNVB, GothamChess and Hikaru—contribute 20 Brilliants and 20 explicit non-Brilliants to the test. The model, rules and threshold were fixed before its current labels were captured.
 
-The result is a more generous open alternative to En Croissant that matches more Chess.com labels **in this comparison**. It is a measurable step toward that experience, with substantial gaps still to close.
+## A sacrifice the candidate recognizes
 
-The sample comes from nelsi, hansen, KNVB, GothamChess and Hikaru. Comparison moves deliberately include apparent sacrifices, exchanges and quiet defenses. This is a balanced challenge set, not a random sample of chess: its percentages do not tell us how often a badge would appear in an ordinary game.
+![Hansen’s 17.Bxh7+ and the actual king capture, drawn with native Mute Chess pieces and colors.](visuals/outputs/fresh-bxh7.gif)
 
-## A Brilliant can be quiet
+In [Hansen’s 17.Bxh7+](https://www.chess.com/analysis/game/live/167741829524/review?move=32), the bishop takes a pawn and gives check while becoming available to the king. Both Chess.com and the frozen forest award Brilliant. The animation then shows **17...Kxh7**, the reply recorded in the game: White gives up a bishop for a pawn. Acceptance is not claimed forced, and the illustration makes no claim about the complete compensation. This is one of the 55 recognized test moves.
 
-![Hikaru's Bg2 leaves a rook offered; accepting trades a rook for a bishop.](visuals/outputs/quiet-offer-bg2.gif)
+## A Brilliant can also be quiet
 
-In [Hikaru's 27.Bg2](https://www.chess.com/analysis/game/live/186567991235/review?move=52), White leaves the attacked rook on b1 available. If Black accepts with **...Bxb1**, the other rook can recapture with **Rxb1**: White trades a rook for a bishop while retaining compensation. The animation illustrates that acceptance. Chess.com and Mute both award Bg2 Brilliant.
+![Hikaru’s 27.Bg2 leaves a rook available; the following captures are conditional.](visuals/outputs/quiet-offer-bg2.gif)
 
-The earlier sequence **Re1, ...Nd3, Reb1, ...Ne5** matters. The knight's move to e5 clears the g6–b1 diagonal, exposing the rook to the bishop on g6. Bg2 keeps that offer on the board. It does not newly uncover the attack. Looking only at the piece that moved would miss the rook; requiring every Brilliant to create a new attack would miss the choice to leave it offered.
+[Hikaru’s 27.Bg2](https://www.chess.com/analysis/game/live/186567991235/review?move=52) retreats a bishop while leaving the rook on b1 available. The legal **...Bxb1 Rxb1** illustration trades a rook for a bishop; those replies are not asserted forced or played. Only Bg2 has the reported Brilliant label.
 
-## A clever combination is a harder boundary
+The history rule recognizes this development example, but the forest withholds its badge. Caution can miss exactly the quiet idea that makes Brilliants enjoyable.
 
-![Two legal capture sequences recover material elsewhere and finish a pawn ahead, but have different Chess.com labels.](visuals/outputs/similar-trades-native.png)
+## Material alone does not settle it
 
-In [14...Ndxe5](https://www.chess.com/analysis/game/live/186311900336/review?move=27), Black takes a pawn and apparently offers a knight. The continuation **15.Nxe5 Nxe5 16.fxe5 Rxd3** recovers a bishop elsewhere. Black exchanges two knights for a knight and bishop, gaining a pawn. Chess.com calls the move **Excellent**; the proposed Mute rule withholds Brilliant.
+![Similar material trades receive different Chess.com labels.](visuals/outputs/similar-trades-native.png)
 
-![The rook recovers a bishop on another square in the Excellent reference combination.](visuals/outputs/pawn-win-excellent.gif)
+The [14...Ndxe5 reference](https://www.chess.com/analysis/game/live/186311900336/review?move=27) offers a knight, then recovers material elsewhere in the illustrated sequence. It finishes a pawn up and received Excellent. The different [9...Nxd5 reference](https://www.chess.com/analysis/game/live/186305472636/review?move=17) also finishes a pawn ahead after equal-valued pieces are traded, yet received Brilliant.
 
-Yet the illustrated [**9...Nxd5** combination](https://www.chess.com/analysis/game/live/186305472636/review?move=17) also exchanges equal-valued pieces and finishes a pawn ahead, and Chess.com calls that move Brilliant. These two reference positions are **outside the benchmark totals**. Their continuations are legal illustrations, not forced replies or the actual game sequence. They show why “the material eventually comes back” cannot, by itself, reconstruct Chess.com's boundary. [Watch the Brilliant example's illustrated continuation](visuals/outputs/pawn-win-brilliant.gif).
+The forest withholds both: it declines the Excellent move but misses the Brilliant one. Both references are **outside the benchmark totals**. Their [Excellent](visuals/outputs/pawn-win-excellent.gif) and [Brilliant](visuals/outputs/pawn-win-brilliant.gif) capture sequences are conditional legal illustrations.
 
-## Turning those observations into a rule
+[Chess.com’s published guidance](https://support.chess.com/en/articles/8572705-how-are-moves-classified-what-is-a-blunder-or-brilliant-etc) describes strong piece sacrifices, position conditions and more generous treatment of newer players. It does not publish the complete formula. Similar material is only part of the boundary.
 
-Mute's published rule asks five questions. All must pass:
+## How the classifier makes the call
 
-1. **Is the move strong enough?** It loses at most five points on a mapped win-chance scale, and the resulting engine score is at least −1.00 pawns for the mover. Those five points are a scoring heuristic, not a measured human winning probability.
-2. **Is a piece legally offered?** The opponent can capture a knight, bishop, rook or queen and profit from captures and recaptures on that square. The profit must exceed the move's immediate material gain plus a one-pawn-sized margin. Either side can stop exchanging. The offered piece need not be the one that moved.
-3. **Does a broader material check agree?** En Croissant's capture-only material search must also find a sacrifice, or the engine must explicitly report a winning mate for the mover. This helps reject ordinary combinations that recover material elsewhere. It remains a heuristic, not proof of a forced sacrifice.
-4. **Does the offer still matter?** No other evaluated move without a qualifying piece offer may already score at least +6.00 pawns. This examines the alternatives the engine actually checked.
-5. **Do completed engine checks agree?** Complete analysis windows must corroborate the award. Missing or contradictory evidence withholds it. At least two candidate moves must have been evaluated; the played move need not be uniquely best.
+The **forest** first requires a legal piece offer and adequate engine-assessed move quality. It then combines 64 fixed decision trees using chess and engine features. Current and previous completed engine checks must both pass. Its score is not a calibrated probability that a move is Brilliant.
 
-![The five checks in Mute's open Brilliant rule.](figures/current-rules.png)
+The **history rule** is a separate, more permissive comparator. Among other checks, it prevents a quiet follow-up earning another badge merely because an earlier sacrifice remains available. It recognizes more Brilliants here, with more extra awards. Its exact exceptions and finite proof limits are documented alongside the forest.
 
-En Croissant instead requires its material-sacrifice test, the engine's first-choice move, and a sufficiently large gap over the second choice. That can reject a good sacrifice when another strong move exists. The comparison uses **En Croissant's direct annotation** and **Mute's confirmed award** on identical saved engine evidence. We verified that En Croissant's latest stable scoring and material code matches the pinned reference. **Mobile Maia keeps its existing En Croissant-based behavior.** [Exact formulas, sources and reproduction](METHODS.md).
+We favor the forest for an experiment that prioritizes convincing badges. This test supports that choice against direct En Croissant on these cases; it does not establish the best classifier globally. The single forest extra award was Hansen’s 37.Rxd7+, labeled Excellent.
 
-## Fewer false awards has a cost
+The balanced, challenging sample does not estimate ordinary-game badge frequency or deployment precision. Moves share games, and the displayed intervals are not adjusted for that clustering. These five established accounts cannot establish beginner behavior; recorded Game Review labels are evidence, not objective chess truth.
 
-The broader material check is the proposed change to Mute. It removes **61 extra awards**, while also losing **53 correctly recognized Brilliants**:
-
-| Rule on the same 618 moves | Chess.com Brilliants found | Extra awards on non-Brilliants | Overall agreement |
-| --- | ---: | ---: | ---: |
-| En Croissant | 84 / 309 | 6 / 309 | 62.6% |
-| Mute: legal offers alone | 273 / 309 | 77 / 309 | 81.7% |
-| **Mute: with the material guard** | **220 / 309** | **16 / 309** | **83.0%** |
-
-That makes the guard a choice about badge quality, rather than a free improvement. On reserved games it cuts extra awards from **11 to 4**, but recognition falls from **44 to 31 of 51** Brilliants. Overall agreement falls from **82.2% to 76.2%** there. The more generous Mute rule wins on that single measure; the guarded rule better addresses unwanted awards. Both exceed En Croissant's reserved-game agreement of **64.4%**.
-
-The guarded rule was fixed before the reserved games were labeled. Full-set results include examples used to choose it, so the reserved result is the more demanding check. Targeted searches at five times the node budget are reported separately in the methods; they do not selectively replace the headline results.
-
-## What remains unresolved
-
-The guarded rule still misses **89 of 309** observed Brilliants and makes **16 extra awards**. For example, [Hikaru's 30.Kh1](https://www.chess.com/analysis/game/live/185741429132/review?move=58) is Best on Chess.com but Brilliant under Mute's rule. A sound piece offer does not necessarily feel exceptional. Conversely, some Chess.com Brilliants recover material in ways that make a strict material filter reject them.
-
-Chess.com says player strength affects its criteria, and review settings can change labels. These established accounts do not establish beginner behavior; game ratings and time controls vary. The full formula is unpublished. [Published criteria](https://support.chess.com/en/articles/8572705-how-are-moves-classified-what-is-a-blunder-or-brilliant-etc); [Game Review settings](https://support.chess.com/en/articles/8584089-how-does-game-review-work).
-
-This study supports an inspectable, more Chess.com-like alternative to the open-source peer tested here. It does not establish 99% agreement, superiority to untested projects, or how much enjoyment the badge creates. The [move-by-move evidence](moves.csv), [open rules](reference/README.md) and [validation methods](METHODS.md) let others check the result and improve it.
+The tested configuration is **SF18 at 300,000 requested nodes**. Native Mute Chess’s SF19 and varying browser budgets remain **unvalidated**. Mobile Maia keeps its existing En Croissant-based classifier. [Exact algorithms](README.md), [methods and sources](METHODS.md), and the saved predictions make the tradeoff inspectable.

@@ -1,3 +1,7 @@
+# Reference versions
+
+The current 1,048-move study uses the [fixed v5 scientific reference and native prototype](v5/README.md). The source descriptions below describe the earlier 618-move release, archived at [c6969d1](https://github.com/Dash1971/mute-chess-research/tree/c6969d1/studies/brilliant-moves). They are not current test metrics.
+
 # Pinned rules and reproduction
 
 These source copies support the unified 618-move comparison. They are study inputs, not new application dependencies. The Mute material guard was selected with development examples, then held fixed for prospective checks and reserved-game validation; see [methods](../METHODS.md).

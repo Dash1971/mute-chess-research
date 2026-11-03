@@ -4,17 +4,17 @@ Readable studies, visual explanations and the evidence behind Mute Chess's desig
 
 ## Brilliant moves: what deserves the badge?
 
-![Mute and En Croissant compared with Chess.com, including reserved-game validation.](studies/brilliant-moves/figures/rule-comparison.png)
+![Mute candidates and En Croissant on a fixed, fresh 200-move test.](studies/brilliant-moves/figures/fresh-test-results.png)
 
-**[Read: What makes a move brilliant? →](studies/brilliant-moves/REPORT.md)**
+**[Read: When should a move earn Brilliant? →](studies/brilliant-moves/REPORT.md)**
 
-We compared **618 explicitly reviewed moves from 299 games**, evenly divided between Chess.com Brilliants and non-Brilliants. Mute's proposed rule agrees with **83.0%** of those labels, versus **62.6%** for En Croissant. On separately reserved games, agreement is **76.2% versus 64.4%**.
+Our selective candidate recognized **55 of 100 Chess.com Brilliants**, compared with En Croissant’s 26, and made **1 extra award among 100 controls**, versus 2. That is about **2.1 times as many recognized Brilliants, with fewer extra awards in this test**. Its 55% recognition and 77% overall agreement belong beside its 98.2% sample badge precision (55/56 awards; descriptive 95% interval 90.6–99.7%). It misses 45 Brilliants; this is no 90% agreement claim.
 
-Mute recognizes **220 of 309** Chess.com Brilliants, about **2.6 times** En Croissant's 84. It also gives **16 extra awards**, versus En Croissant's 6. The illustrated report shows quiet sacrifices, material recovered on other squares, and the open rules behind those decisions.
+The unified study separates **848 development moves from 439 games** and a **fresh 200-move test from 106 games**: **1,048 moves / 545 games** across five accounts. The separate history rule recognizes 78/100 with 5 extra awards. These balanced, challenging samples do not establish ordinary-game frequency or deployment precision.
 
-The proposed material guard reduces Mute's extra awards **from 77 to 16**, while recognition falls **from 273 to 220**. On reserved games the guard reduces overall agreement relative to the more generous Mute rule. This is an explicit choice about badge quality; these selected-sample rates do not describe ordinary-game award frequency. **Mobile Maia remains unchanged.**
+Native TypeScript has matching reference outputs on the 1,048 recorded SF18 inputs. **SF19 and changing browser budgets remain unvalidated; no merge or deployment is claimed. Mobile Maia remains unchanged.**
 
-[Exact methods and open evidence](studies/brilliant-moves/METHODS.md) · [Move-by-move results](studies/brilliant-moves/moves.csv) · [Proposed Mute change](https://github.com/Dash1971/mute-chess/pull/231)
+[Exact algorithm](studies/brilliant-moves/README.md) · [Methods and sources](studies/brilliant-moves/METHODS.md) · [Move-level evidence](studies/brilliant-moves/moves.csv) · [Earlier 618-move report](https://github.com/Dash1971/mute-chess-research/blob/c6969d1/studies/brilliant-moves/REPORT.md)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 

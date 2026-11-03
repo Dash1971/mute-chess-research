@@ -1,15 +1,46 @@
 {
-  "scope": "Publication checks; saved-input replays use no engine or browser.",
-  "primary_moves": 618,
-  "games": 299,
-  "positions": 25170,
-  "observation_records": 992,
-  "active_observation_records": 963,
-  "all_primary_pgn_san_uci_before_after_identities_match": true,
-  "all_pgn_content_and_pinned_source_hashes_match": true,
-  "all_combined_confusion_counts_match": true,
-  "all_v2_and_v3_public_replay_rows_and_summaries_match_saved_outputs": true,
+  "scope": "Current1048corpus/public reference package; fixedfresh200metrics, noengine/refit duringpublicationstaging.",
+  "primary_moves": 1048,
+  "games": 545,
+  "positions": 47118,
+  "observations": 1781,
+  "development_moves": 848,
+  "fresh_moves": 200,
+  "fresh_games": 106,
+  "fresh_class_counts": [
+    100,
+    100
+  ],
+  "fresh_forest_TP_FN_FP_TN": [
+    55,
+    45,
+    1,
+    99
+  ],
+  "fresh_S_TP_FN_FP_TN": [
+    78,
+    22,
+    5,
+    95
+  ],
+  "fresh_EC_direct_TP_FN_FP_TN": [
+    26,
+    74,
+    2,
+    98
+  ],
   "local_markdown_targets_exist": true,
-  "credential_value_scan": "clear",
-  "symlinks": 0
+  "root_readme_Elo_and_archive_sections_unchanged": true,
+  "original_frozen_material_helper_unchanged": true,
+  "symlinks": 0,
+  "path_normalized_extractor_smoke_check": "reference/v5/PORTABILITY-CHECK.json",
+  "native_recorded_input_parity_cases": 1048,
+  "native_SF19_variable_budgets_validated": false,
+  "data_privacy_audit": "DATA-PROVENANCE.json and data/source-hash-audit.json",
+  "publication_state": "STAGED FOR OWNER REVIEW; no commit/push/merge/deploy",
+  "new_reference_private_absolute_path_literals": 0,
+  "source_path_mapping_display_redacted": true,
+  "public_csv_line_endings": "LF",
+  "public_csv_parsed_values_unchanged": true,
+  "git_diff_check": "pass"
 }
