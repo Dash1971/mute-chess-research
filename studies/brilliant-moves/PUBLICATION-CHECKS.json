@@ -201,5 +201,7 @@
   "native_selected_SF19_accuracy_validated": false,
   "illustrated_Bg2_selective_award": false,
   "illustrated_hxg6_selective_award": false,
-  "illustrated_hxg5_selective_award": false
+  "illustrated_hxg5_selective_award": false,
+  "reader_model_explanation": "Explicitly trained on Chess.com-labeled examples and run locally in the browser; no remote classification or learning during play.",
+  "future_test_reuse": "Current400 test moves may train a future model only if that model is assessed on different unseen games. No model is retrained by this documentation update."
 }

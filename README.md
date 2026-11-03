@@ -8,11 +8,13 @@ Readable studies, visual explanations and the evidence behind Mute Chess's desig
 
 **[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md)**
 
-We recommend **Mute Selective alongside its chess rules**. Across **400 test moves from 215 games not used for training**, it recognized **112 of 200 Chess.com Brilliants**, compared with En Croissant’s 53. Both gave **3 undeserved badges among 200 non-Brilliant moves**.
+We recommend **Mute Selective: a small model we trained on chess moves labeled by Chess.com, combined with basic chess checks**. Your browser downloads it with the analysis code and runs it locally, using Stockfish evaluations and facts about the position. There is no ChatGPT or remote classification call, and it does not learn during play. En Croissant uses developer-written rules for its badge; our model learns patterns from Chess.com’s labels.
 
-The more generous History Rule found more Brilliants but gave too many wrong badges to justify choosing it: on the same 200 moves, **78 correct and 13 wrong**, versus the selective model’s **57 correct and 2 wrong**. Our next goal is to recognize more Brilliants while keeping wrong awards low, testing fixed candidates on new games.
+Across **400 test moves from 215 games not used for training**, it recognized **112 of 200 Chess.com Brilliants**, compared with En Croissant’s 53. Both gave **3 undeserved badges among 200 non-Brilliant moves**.
 
-This is a learned model with chess eligibility rules, not a requirement to combine it with the separate History Rule or recovery guard. The app PR remains draft for Mute Dev. Mobile Maia remains unchanged.
+The more generous History Rule found more Brilliants but gave too many wrong badges to justify choosing it: on the same 200 moves, **78 correct and 13 wrong**, versus the selective model’s **57 correct and 2 wrong**. Our next goal is to train improved versions on more labeled examples while keeping wrong awards low. We can reuse the current test examples for training, then check improvement on different games the new model has never seen.
+
+The model and training code are openly published. The separate History Rule and recovery guard are comparison methods, not extra requirements for Mute Selective. Mute Dev handles the app merge. Mobile Maia remains unchanged.
 
 [Exact selected algorithm](studies/brilliant-moves/README.md) · [Methods and limits](studies/brilliant-moves/METHODS.md) · [Test move evidence](studies/brilliant-moves/data/selective-independent-moves.csv)
 

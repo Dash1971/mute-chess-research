@@ -1,6 +1,8 @@
 # Mute Selective: exact algorithm
 
-**Recommendation: adopt Mute Selective, the fixed model alongside its original chess eligibility rules.** This is a learned decision model, not just hand-written heuristics. It does **not** require the separate History Rule or material-recovery guard to pass. The app PR remains draft for Mute Dev; Mobile Maia is unchanged.
+**Recommendation: adopt Mute Selective, a small model we trained on chess moves labeled by Chess.com, combined with basic chess checks.** It does **not** require the separate History Rule or material-recovery guard to pass. Mute Dev handles the app merge; Mobile Maia is unchanged.
+
+Your browser downloads the model with the analysis JavaScript and runs it locally in a background worker. It combines Stockfish evaluations with facts about the position. This is a decision-tree model evaluated by ordinary JavaScript, without ONNX, a GPU requirement, ChatGPT or a remote classification service. It does not train or change during play. The model file and training code are public. En Croissant decides the badge using developer-written rules; Mute Selective uses those basic chess checks plus patterns learned from Chess.com’s labeled examples.
 
 The unchanged model was trained on 848 development moves. Two separate game-disjoint tests contain **400 moves from 215 games**, none used to train or tune it. The model bytes, 75 features, 64 trees and per-window 5/6 threshold are unchanged. The choice of policy follows comparison of results; this is not a new blind validation of candidate selection.
 
@@ -190,10 +192,10 @@ The selected model misses Hikaru’s Bg2, a recorded Brilliant. It withholds bot
 
 ## Further work
 
-Recognize more genuine Brilliants while keeping wrong awards low. Freeze each future candidate before using new games to test it. Do not tune the threshold against the same test labels or combine a favorable result from one engine/budget with another. Current validation uses saved SF18/300k windows; the separate native whole-game assessment tested the History Rule, not this selected model, and does not qualify selective-model SF19 or variable-budget/browser behavior.
+Recognize more genuine Brilliants while keeping wrong awards low. More labeled examples can help, especially missed Brilliants and difficult ordinary tactics. The 400 current test moves can be reassigned to training for a future model; they then cease to be an independent test of that model. Keep this model and its historical results unchanged. Reserve different complete games, exclude duplicate positions across the training/test boundary, and freeze the new model before evaluating it on those new games. Report recognized Brilliants and wrong awards together. Do not tune the threshold against the same test labels or combine a favorable result from one engine/budget with another. Current validation uses saved SF18/300k windows; the separate native whole-game assessment tested the History Rule, not this selected model, and does not qualify selective-model SF19 or variable-budget/browser behavior.
 
 ## Native replay on the new 200 saved inputs
 
 The unchanged native selective module and integrated classifier match the fixed scientific reference on the 200 new SF18 inputs: zero feature/missingness, score, award, integrated-classifier or EC-result differences; maximum floating difference 2.84e−14. There were no physical-probe unknowns. One optional avoidability proof remains unknown in both windows and retains the frozen missing routing. [Summary](data/selective-replay/native-parity-summary.json) and [trace](data/selective-replay/native-parity-trace.json) pin module 10ac40a…, classifier be222880… and exact model 44704ac….
 
-This is implementation parity on saved SF18 inputs, not native SF19 accuracy, variable-budget/browser validation or a new independent test. The older 10-game History execution assessment remains separate and does not measure Mute Selective’s native accuracy. The PR stays draft for Mute Dev.
+This is implementation parity on saved SF18 inputs, not native SF19 accuracy, variable-budget/browser validation or a new independent test. The older 10-game History execution assessment remains separate and does not measure Mute Selective’s native accuracy. Mute Dev handles the app merge.

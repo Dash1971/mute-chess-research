@@ -1,6 +1,6 @@
 {
   "scope": "Mute Selective publication: unchanged fixed model plus original chess eligibility rules. Headline400game-disjointtestmoves/215games exclude training fit. History/recovery comparisons and older data preserved. App PR remains draft for Mute Dev. Hashes exclude this manifest itself.",
-  "generated_at": "2026-11-03T14:38:21.581734+00:00",
+  "generated_at": "2026-11-03T14:51:04.891209+00:00",
   "files": [
     {
       "path": "COHORT-FREEZE.json",
@@ -29,18 +29,18 @@
     },
     {
       "path": "PUBLICATION-CHECKS.json",
-      "bytes": 5604,
-      "sha256": "5832995caf57a1594189ac5fe2cd77ab0f655730534177ace965d12c3fcc233e"
+      "bytes": 5951,
+      "sha256": "7735101878a6d03d31428dab40d200b81dd4a208ce3c71b35f45a3b53ef7f645"
     },
     {
       "path": "README.md",
-      "bytes": 18662,
-      "sha256": "752472551202e30ee95085079a61ef113e39417b7e12cbbb64fee65492bfa188"
+      "bytes": 19619,
+      "sha256": "55dbf1322830c621e1fd5415c67a7ca747edeafab64ed8b1a6553ed7708153ea"
     },
     {
       "path": "REPORT.md",
-      "bytes": 3907,
-      "sha256": "bbcbeb407b4d54bacf531ae5323a75578dd7390d106e306981b133b95d3a6754"
+      "bytes": 4656,
+      "sha256": "5cdb93a936b53e1a98e1fba964d280416aaa4b9a42456e16ab300b1d538fa07c"
     },
     {
       "path": "SUMMARY.json",
