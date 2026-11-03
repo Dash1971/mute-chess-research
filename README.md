@@ -2,19 +2,19 @@
 
 Readable studies, visual explanations and the evidence behind Mute Chess's design decisions.
 
-## Brilliant moves: making good chess feel rewarding
+## Brilliant moves: celebrating sacrifices without praising every trade
 
-![A small pilot compares En Croissant and Mute with observed Chess.com labels.](studies/brilliant-moves-pilot-2026-11-03/figures/rule-comparison.png)
+![Three classifiers balance Brilliant recognition against extra awards.](studies/brilliant-moves-2026-11-03/figures/rule-comparison.png)
 
-**[Read the illustrated brilliant-moves pilot →](studies/brilliant-moves-pilot-2026-11-03/REPORT.md)**
+**[Read: What makes a move brilliant? →](studies/brilliant-moves-2026-11-03/REPORT.md)**
 
-On November 3, 2026 we captured 20 gallery brilliants and 20 separate, explicitly reviewed controls across five Chess.com accounts. The 40 moves came from 19 games. Current Game Review displays confirmed 19 brilliants and 21 non-brilliants: one historical gallery entry now displayed Best.
+We compared **318 moves from 153 games**: 159 displayed Chess.com Brilliants and 159 explicitly non-brilliant moves. The illustrated report shows quiet sacrifices, ordinary pawn-winning combinations and the rules a program can use to distinguish them.
 
-With fixed local engine evidence, Mute's existing v2 rules awarded **17/19** of those current brilliants, versus **6/19** for the pinned En Croissant rules. Mute also awarded **1/21** sampled non-brilliants; En Croissant awarded **0/21**. These are selected pilot counts, not population accuracy estimates.
+On this deliberately challenging sample, proposed Mute rules reduce extra Brilliant awards **from 42 to 6**, while recognizing **117 of 159** Chess.com Brilliants instead of 143. En Croissant recognizes 44, with 2 extra awards. The report explains this tradeoff openly; these are retrospective sample counts, not ordinary-game error rates. **Mobile Maia remains unchanged.**
 
-Mute v2 rewards near-best, sound, legally capturable piece offers. It credits material already won, rejects an evaluated safe alternative worth at least +6 pawns, and requires corroborating engine evidence. The report explains the [exact rules and score mapping](studies/brilliant-moves-pilot-2026-11-03/REPORT.md#the-rules-we-actually-compared), the mismatches and the limitations. Chess.com's complete formula remains unpublished. This pilot changed no application rules; Mobile Maia was left unchanged.
+[Exact methods and open evidence](studies/brilliant-moves-2026-11-03/METHODS.md) · [Proposed Mute change](https://github.com/Dash1971/mute-chess/pull/231)
 
-**[Follow-up: the pawn-winning false positive →](studies/brilliant-moves-followup-2026-11-03/README.md)** Current Chess.com review calls the reported Ndxe5 **Excellent**. Two simple material filters reject it, but also remove four confirmed pilot brilliants. A closely related GothamChess pawn-winning combination illustrates why we recommend a focused second sample before changing the classifier.
+Earlier evidence remains available: the [40-move feasibility pilot](studies/brilliant-moves-pilot-2026-11-03/REPORT.md) and [pawn-winning follow-up](studies/brilliant-moves-followup-2026-11-03/README.md). Their findings and recommendations describe those earlier samples.
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 
@@ -30,4 +30,4 @@ The complete study directories were copied byte for byte from [mobile-maia-resea
 
 Each study separates observations, interpretations and recommendations. Public game records, source pins, limitations and reproduction material accompany the reports. No authenticated session data or raw cookie-bearing response metadata is published.
 
-The original [AGPL-3.0-only license](LICENSE) is retained for the copied research. Third-party code and visual evidence retain their own attribution and licensing; see the brilliant study's [reference notes](studies/brilliant-moves-pilot-2026-11-03/reference/README.md). Reports and preparation used OpenAI Codex assistance. This repository is independent of Chess.com, Lichess and En Croissant.
+The original [AGPL-3.0-only license](LICENSE) is retained for the copied research. Third-party code and visual evidence retain their own attribution and licensing; see the brilliant study's [reference notes](studies/brilliant-moves-2026-11-03/reference/README.md). Reports and preparation used OpenAI Codex assistance. This repository is independent of Chess.com, Lichess and En Croissant.
