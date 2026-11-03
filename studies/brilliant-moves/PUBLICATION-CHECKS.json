@@ -36,7 +36,7 @@
   "native_recorded_input_parity_cases": 1048,
   "native_SF19_variable_budgets_validated": false,
   "data_privacy_audit": "DATA-PROVENANCE.json and data/source-hash-audit.json",
-  "publication_state": "READY FOR OWNER REVIEW; no commit/push by research agent",
+  "publication_state": "Research update authorized for publication; app merge belongs to Mute Dev.",
   "new_reference_private_absolute_path_literals": 0,
   "source_path_mapping_display_redacted": true,
   "public_csv_line_endings": "LF",
@@ -88,7 +88,7 @@
     "verified_by": "Root final replay using published source and installed python-chess"
   },
   "recovery_plan_original_sha256": "1d95afbf290345ae9eeefa611f3286f07dfed8ab5da60d2aef202866d89b703f",
-  "reader_report_word_count": 529,
+  "reader_report_word_count": 677,
   "reader_report_structure": [
     "goal",
     "method",
@@ -117,5 +117,59 @@
   "root_readme_Elo_section_unchanged": true,
   "reader_archive_navigation_relocated_to_METHODS": true,
   "archived_study_files_preserved": true,
-  "chart_visually_inspected": true
+  "chart_visually_inspected": true,
+  "current_studied_moves": 1248,
+  "current_studied_games": 654,
+  "current_class_counts": [
+    613,
+    635
+  ],
+  "current_Mute_TP_FN_FP_TN": [
+    478,
+    135,
+    35,
+    600
+  ],
+  "current_EC_direct_TP_FN_FP_TN": [
+    166,
+    447,
+    10,
+    625
+  ],
+  "new_game_test_moves": 200,
+  "new_game_test_games": 109,
+  "new_game_Mute_TP_FN_FP_TN": [
+    78,
+    22,
+    13,
+    87
+  ],
+  "new_game_EC_direct_TP_FN_FP_TN": [
+    27,
+    73,
+    1,
+    99
+  ],
+  "new_game_core_vs_guard_decision_changes": 0,
+  "new_game_PGN_SAN_UCI_before_after_checked": 200,
+  "native_processed_moves_not_pooled": 884,
+  "native_labeled_primary_not_pooled": 19,
+  "native_predicted_awards_audit": {
+    "awards": 13,
+    "matching_labels": 9,
+    "extra_awards": 4,
+    "prediction_selected": true
+  },
+  "guard_discovery_games": 500,
+  "guard_board_candidates": 12,
+  "actual_guard_veto_panel_cases": 0,
+  "guard_direct_validation": "Inconclusive: no actual veto activation.",
+  "current_owner_decision": "Adopt History Rule with recovery guard; app PR remains open and draft for Mute Dev. No app merge, deployment or mark-ready action.",
+  "old_scientific_data_and_sources_preserved": true,
+  "chart_counts_and_render_verified": true,
+  "previous_full_summary_preserved": "data/prospective-history/preceding-summary.json",
+  "current_publication_totals": {
+    "moves": 1248,
+    "games": 654
+  }
 }

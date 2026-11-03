@@ -8,11 +8,11 @@ Readable studies, visual explanations and the evidence behind Mute Chess's desig
 
 **[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md)**
 
-We recommend the **Mute History Rule**. Across **1,048 studied moves from 545 games**, it recognizes **400 of 513 Chess.com Brilliants**, compared with En Croissant’s 139. Overall agreement is **87.1% versus 63.5%**. Mute also gives more extra awards: **22 of 535 comparison moves versus 9**. The report explains the tradeoff through quiet sacrifices, repeated offers and ordinary material recovery.
+The **Mute History Rule** is our closest-matching tested heuristic, but the merge is on hold. Across **1,248 studied moves from 654 games**, it recognizes **478 of 613 Chess.com Brilliants**, compared with En Croissant’s 166. Overall agreement is **86.4% versus 63.4%**. Mute also gives more extra awards: **35 of 635 comparison moves versus 10**. The report explains the tradeoff through quiet sacrifices, repeated offers and ordinary material recovery.
 
-**These results describe the studied examples; fresh-game testing is underway before release.** Mobile Maia keeps its existing En Croissant-based classifier.
+**Fresh-game testing found 78/100 Brilliants and 13/100 extra awards, versus En Croissant’s 27 and 1. That false-award rate is too high: hold the merge and keep the PR in draft.** The material guard changed no fresh decisions; its generalization is unproven. Mobile Maia keeps its existing En Croissant-based classifier.
 
-[Exact rules](studies/brilliant-moves/README.md) · [Methods and validation](studies/brilliant-moves/METHODS.md) · [Move-level evidence](studies/brilliant-moves/moves.csv)
+[Exact rules](studies/brilliant-moves/README.md) · [Methods and validation](studies/brilliant-moves/METHODS.md) · [Move-level evidence](studies/brilliant-moves/data/combined-history-moves.csv)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 

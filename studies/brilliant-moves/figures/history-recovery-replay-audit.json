@@ -1,37 +1,62 @@
 {
-  "source_sha256": "f9fcbd1e9fdf1bdda11c700cabac239a4751ef88a5a16704b62587373d808d46",
+  "source_sha256": "953692c637413a7088a44513f7f071880ac93e30471fd516591136a4155c43e7",
   "plotted_counts": [
     {
-      "classifier": "refined",
+      "sample": "combined1248",
+      "classifier": "v7",
       "panel": "positive",
-      "count": 400,
-      "denominator": 513
+      "count": 478,
+      "denominator": 613
     },
     {
+      "sample": "combined1248",
       "classifier": "ec_direct",
       "panel": "positive",
-      "count": 139,
-      "denominator": 513
+      "count": 166,
+      "denominator": 613
     },
     {
-      "classifier": "refined",
+      "sample": "combined1248",
+      "classifier": "v7",
       "panel": "negative",
-      "count": 22,
-      "denominator": 535
+      "count": 35,
+      "denominator": 635
     },
     {
+      "sample": "combined1248",
       "classifier": "ec_direct",
       "panel": "negative",
-      "count": 9,
-      "denominator": 535
+      "count": 10,
+      "denominator": 635
+    },
+    {
+      "sample": "prospective200",
+      "classifier": "v7",
+      "panel": "positive",
+      "count": 78,
+      "denominator": 100
+    },
+    {
+      "sample": "prospective200",
+      "classifier": "ec_direct",
+      "panel": "positive",
+      "count": 27,
+      "denominator": 100
+    },
+    {
+      "sample": "prospective200",
+      "classifier": "v7",
+      "panel": "negative",
+      "count": 13,
+      "denominator": 100
+    },
+    {
+      "sample": "prospective200",
+      "classifier": "ec_direct",
+      "panel": "negative",
+      "count": 1,
+      "denominator": 100
     }
   ],
-  "native_colors": {
-    "moss": "#668478",
-    "light": "#C7CFBA",
-    "gold": "#D9B25F",
-    "ink": "#172723",
-    "pale": "#EDF1EA",
-    "muted": "#496357"
-  }
+  "scope": "Combined studied sample and separate new-game check; no native or panel pooling."
 }

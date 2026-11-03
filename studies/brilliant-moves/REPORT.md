@@ -2,11 +2,11 @@
 
 Chess.com’s Brilliant badge makes a good chess idea feel special. Our goal is to bring that experience to an open chess platform: celebrate sound sacrifices, including quiet ones, with rules that anyone can inspect.
 
-**We recommend adopting the Mute History Rule.** It recognizes substantially more of the studied Chess.com Brilliants than our En Croissant starting point, while checking for repeated offers and ordinary material recovery.
+**The Mute History Rule is our closest-matching tested heuristic, but it is not ready for release.** It recognizes substantially more of the studied Chess.com Brilliants than our En Croissant starting point, while checking for repeated offers and ordinary material recovery.
 
 ## What we studied
 
-We examined **1,048 labeled moves from 545 games** played by nelsi, hansen, KNVB, GothamChess and Hikaru. Each move has a recorded Chess.com classification, its full game history and engine analysis. We compared our rule with En Croissant on the same positions and analysis.
+We examined **1,248 labeled moves from 654 games** played by nelsi, hansen, KNVB, GothamChess and Hikaru. Each move has a recorded Chess.com classification, its full game history and engine analysis. We compared our rule with En Croissant on the same positions and analysis.
 
 Chess.com does not publish its complete formula. Its [guidance](https://support.chess.com/en/articles/8572705-how-are-moves-classified-what-is-a-blunder-or-brilliant-etc) describes good piece sacrifices, position conditions and player-strength considerations. We used those published ideas and the observed moves to build an understandable Mute policy.
 
@@ -36,12 +36,20 @@ After [18...hxg6](https://www.chess.com/analysis/game/live/171488501692/review?m
 
 | On the studied examples | Mute Chess | En Croissant |
 | --- | ---: | ---: |
-| Chess.com Brilliants recognized | **400 / 513** | 139 / 513 |
-| Extra awards on non-Brilliant moves | **22 / 535** | 9 / 535 |
-| Overall agreement | **87.1%** | 63.5% |
+| Chess.com Brilliants recognized | **478 / 613** | 166 / 613 |
+| Extra awards on non-Brilliant moves | **35 / 635** | 10 / 635 |
+| Overall agreement | **86.4%** | 63.4% |
 
-Mute recognizes about **2.9 times as many Brilliants**, with more extra awards. That is the explicit tradeoff behind our recommendation: make more worthwhile ideas visible, using documented rules rather than treating every temporary offer as special.
+Mute recognizes about **2.9 times as many Brilliants**, but gives more undeserved badges. The combined figures describe the examples we studied; some helped us design the rules.
 
-**These results describe the studied examples; fresh-game testing is underway before release.**
+We also checked **200 moves from games the rules had never been tested on**: 100 Chess.com Brilliants and 100 moves Chess.com did not call Brilliant.
 
-Adopt the History Rule for Mute Chess. Keep the [exact algorithm](README.md), [sampling and validation methods](METHODS.md), and move-level evidence open. Mobile Maia keeps its existing En Croissant-based classifier.
+| On those new games | Mute Chess | En Croissant |
+| --- | ---: | ---: |
+| Brilliants correctly recognized | **78 / 100** | 27 / 100 |
+| Undeserved Brilliant badges | **13 / 100** | 1 / 100 |
+| Moves classified the same way as Chess.com | **82.5%** | 63.0% |
+
+The material-recovery check fixes the illustrated hxg6 and hxg5 examples, but **it prevented no wrong awards in the new games**. It also removed no correct awards. That means we have not shown that this added check solves the wider problem.
+
+**Adopt the Mute History Rule with the material-recovery check included.** It fixes the two illustrated mistakes without removing any correctly recognized Brilliants in our tests. It finds many more of Chess.com’s Brilliants than En Croissant, while further work should reduce the remaining undeserved badges. Keep the [exact algorithm](README.md), [sampling and validation methods](METHODS.md), and move-level evidence open. Mobile Maia keeps its existing En Croissant-based classifier.
