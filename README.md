@@ -2,17 +2,19 @@
 
 Readable studies, visual explanations and the evidence behind Mute Chess's design decisions.
 
-## Brilliant moves: a Chess.com-like experience with open rules
+## Brilliant moves: more genuine ideas, fewer undeserved badges
 
-![Mute Chess and En Croissant compared on the studied examples.](studies/brilliant-moves/figures/history-recovery-replay.png)
+![The selective model and En Croissant on 400 test moves.](studies/brilliant-moves/figures/history-recovery-replay.png)
 
 **[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md)**
 
-The **Mute History Rule** is our closest-matching tested heuristic, but the merge is on hold. Across **1,248 studied moves from 654 games**, it recognizes **478 of 613 Chess.com Brilliants**, compared with En Croissant’s 166. Overall agreement is **86.4% versus 63.4%**. Mute also gives more extra awards: **35 of 635 comparison moves versus 10**. The report explains the tradeoff through quiet sacrifices, repeated offers and ordinary material recovery.
+We recommend **Mute Selective alongside its chess rules**. Across **400 test moves from 215 games not used for training**, it recognized **112 of 200 Chess.com Brilliants**, compared with En Croissant’s 53. Both gave **3 undeserved badges among 200 non-Brilliant moves**.
 
-**Fresh-game testing found 78/100 Brilliants and 13/100 extra awards, versus En Croissant’s 27 and 1. That false-award rate is too high: hold the merge and keep the PR in draft.** The material guard changed no fresh decisions; its generalization is unproven. Mobile Maia keeps its existing En Croissant-based classifier.
+The more generous History Rule found more Brilliants but gave too many wrong badges to justify choosing it: on the same 200 moves, **78 correct and 13 wrong**, versus the selective model’s **57 correct and 2 wrong**. Our next goal is to recognize more Brilliants while keeping wrong awards low, testing fixed candidates on new games.
 
-[Exact rules](studies/brilliant-moves/README.md) · [Methods and validation](studies/brilliant-moves/METHODS.md) · [Move-level evidence](studies/brilliant-moves/data/combined-history-moves.csv)
+This is a learned model with chess eligibility rules, not a requirement to combine it with the separate History Rule or recovery guard. The app PR remains draft for Mute Dev. Mobile Maia remains unchanged.
+
+[Exact selected algorithm](studies/brilliant-moves/README.md) · [Methods and limits](studies/brilliant-moves/METHODS.md) · [Test move evidence](studies/brilliant-moves/data/selective-independent-moves.csv)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 

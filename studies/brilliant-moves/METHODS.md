@@ -1,9 +1,20 @@
 # Methods, sources and reproduction
 
-**Current decision: adopt the Mute History Rule with its material-recovery guard, and continue improving false-award behavior.** On 200 fresh moves from 109 games, the unchanged rule and core rule each give 78TP/22FN/13FP/87TN (82.5% agreement), versus direct En Croissant 27/73/1/99 (63.0%). Thirteen false awards among 100 controls remain an important limit and a target for further refinement. There was no guard-specific decision difference. The combined 1,248-move/654-game descriptive counts are 478/135/35/600 (86.4%) versus EC 166/447/10/625 (63.4%). Combined totals include development examples and must not replace the fresh-test estimate. [New evidence and audits](data/prospective-history/PRIMARY-AUDIT.json) and [combined move-level results](data/combined-history-results.json) accompany the update.
+**Current recommendation: Mute Selective, the fixed model plus its original chess rules.** The headline evidence is 400 test moves from 215 games, not training fit. Selective 112TP/88FN/3FP/197TN versus EC 53/147/3/197; the newest 200 alone gives 57/43/2/98 versus EC 27/73/1/99. The separate History Rule’s 78/22/13/87 found more Brilliants but gave too many extra badges to justify choosing it. No model, feature, threshold or algorithm was changed for this comparison.
+
+## Selective-model test roles
+
+The full model 44704ac… was trained on 848 development moves and frozen before both 200-move tests. The first test has 106 games; the newest has 109, with no game overlap, giving 400 test moves/ 215 games and 200 positions per class. Sources, weights, eligibility gates and 5/6 per-window threshold remain unchanged. The newest replay uses already captured SF18/300k core windows: no extra searches, tuning or training. [RUN-FREEZE](data/selective-replay/RUN-FREEZE.json), [new results](data/selective-replay/RESULTS.json), [raw feature/score decisions](data/selective-replay/predictions.json) and the [joined 400 rows](data/selective-independent-tests.json) retain exact inputs and hashes.
+
+These games were not used for fitting or threshold selection. The decision to choose this method follows inspection of comparisons, so the combined result is not a new blind test of the policy-selection process. Account/game clustering and balanced hard-control sampling limit generalization; the sample badge fraction 112/115 must not be read as calibrated production precision. The next step is fixed future candidates tested on new games, not post-test threshold adjustment.
+
+The material-recovery guard and History Rule are retained as comparisons only. Native 10-game execution evidence below tested that History path, not the selected fixed model. The selected model’s SF19/variable-budget/browser domain therefore remains unvalidated. Earlier evidence sections remain historical and must not be pooled into the 400 test headline.
 
 
-**Recommendation: adopt the History Rule with the material-recovery guard.** The refinement’s all 1,048 replay gives 400TP/113FN/22FP/513TN, removing exactly two extras while retaining all 400 previous matches. It was designed after inspecting these labels, including the historical 200 test. **All 1,048 are development for the refinement, the replay itself supplies no unseen validation; the separate 200-move assessment is reported above.** The unrefined frozen S 200 result 78/22/5/95 remains independent evidence only for that earlier base rule. Native SF19 and varying budgets remain unvalidated.
+**History Rule comparison (not the selected recommendation).** On 200 fresh moves from 109 games, the unchanged rule and core rule each give 78TP/22FN/13FP/87TN (82.5% agreement), versus direct En Croissant 27/73/1/99 (63.0%). Thirteen false awards among 100 controls remain an important limit and a target for further refinement. There was no guard-specific decision difference. The combined 1,248-move/654-game descriptive counts are 478/135/35/600 (86.4%) versus EC 166/447/10/625 (63.4%). Combined totals include development examples and must not replace the fresh-test estimate. [New evidence and audits](data/prospective-history/PRIMARY-AUDIT.json) and [combined move-level results](data/combined-history-results.json) accompany the update.
+
+
+**Historical History Rule comparison.** The refinement’s all 1,048 replay gives 400TP/113FN/22FP/513TN, removing exactly two extras while retaining all 400 previous matches. It was designed after inspecting these labels, including the historical 200 test. **All 1,048 are development for the refinement, the replay itself supplies no unseen validation; the separate 200-move assessment is reported above.** The unrefined frozen S 200 result 78/22/5/95 remains independent evidence only for that earlier base rule. Native SF19 and varying budgets remain unvalidated.
 
 This is the technical companion to the [reader report](REPORT.md) and [exact algorithm](README.md). It documents a fixed-candidate experiment, not a native deployment or a recovered Chess.com formula.
 
@@ -74,7 +85,7 @@ Within the historical 200 subset, the new result is 78TP/22FN/3FP/97TN. This is 
 
 | Candidate | TP | FN | FP | TN | Agreement |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Mute History Rule S — recommended | 78 | 22 | 5 | 95 | 86.5% |
+| History Rule S — comparison | 78 | 22 | 5 | 95 | 86.5% |
 | Selective forest — comparison | 55 | 45 | 1 | 99 | 77.0% |
 | EC direct | 26 | 74 | 2 | 98 | 62.0% |
 | A | 78 | 22 | 6 | 94 | 86.0% |
@@ -139,4 +150,8 @@ The 10-game native assessment is separate: 884 moves processed through 902 reque
 
 The separate guard-activation discovery scanned 500 new public-PGN games and found 12 board candidates, but **zero actual v7 veto activations**. No fresh panel labels were collected. Direct validation of the guard’s rejection behavior is therefore **inconclusive**, not a zero-error result. [Panel selection](data/prospective-history/PANEL-ACTIVATIONS-FREEZE.json), engine evidence and the [separate-assessment summary](data/prospective-history/separate-assessments-summary.json) preserve that shortfall.
 
-The current decision is **adopt the History Rule with the recovery guard**, retaining the transparent limits and continuing false-award refinement. More Brilliants are recognized than with EC, with 13 extras per 100 fresh controls remaining a significant limitation; the fresh results do not establish a benefit of the material guard. No classifier, threshold or source was tuned in response. Previous 1,048 development and earlier test artifacts remain byte-for-byte preserved; new 200, native audit, panel and secondary observations are not silently pooled. The combined 1,248-move descriptive result is separate from the prospective 200 estimate. Sampling remains balanced and enriched, moves share games, and five accounts limit generalization.
+The History Rule is retained as a comparison; the selected system is the more selective fixed model described above. More Brilliants are recognized than with EC, with 13 extras per 100 fresh controls remaining a significant limitation; the fresh results do not establish a benefit of the material guard. No classifier, threshold or source was tuned in response. Previous 1,048 development and earlier test artifacts remain byte-for-byte preserved; new 200, native audit, panel and secondary observations are not silently pooled. The combined 1,248-move descriptive result is separate from the prospective 200 estimate. Sampling remains balanced and enriched, moves share games, and five accounts limit generalization.
+
+## Native selective replay receipt
+
+The [new 200 native parity summary](data/selective-replay/native-parity-summary.json) and [full trace](data/selective-replay/native-parity-trace.json) show zero feature/missingness, score, award, integrated-symbol or EC-object differences on the exact saved SF18 inputs. Optional avoidability is unknown in one case in both windows; no physical timeout occurs. Exact frozen model bytes match. These are parity findings, not a native SF19 accuracy test. The prior History 10-game assessment is not promoted into evidence for the selected model.

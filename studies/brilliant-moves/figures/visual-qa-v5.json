@@ -35,5 +35,5 @@
   "only_target_is_classified": true,
   "actual_vs_forced": "Bxh7+ Kxh7 are actualPGNmoves; acceptance not claimed forced.",
   "figure_inputs_sha256": "6bfe2daa741d22c85f106d90ef8abd39f309e5bbec1a3ef4376b3a7ea34a37b7",
-  "current_reader_chart": "Passed: four panels separate combined 1,248 examples from 200 new-game moves, with all denominators and wrong-award counts visible. No chart clipping or hidden sample pooling."
+  "current_reader_chart": "Passed: Mute Selective versus En Croissant on 400 fixed-model test moves,112/200 versus53/200recognized and3/200wrong each; separate200comparison57/100and2/100wrong versus27and1. Correct denominators, no clipping, no training-fit pooling."
 }

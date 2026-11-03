@@ -54,43 +54,37 @@ def render(names,filename,heading,footer,retrospective=False):
     plt.close(fig)
     (out/f'{filename}-audit.json').write_text(json.dumps({'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'plotted_counts':audit,'native_colors':COLORS},indent=2)+'\n')
 
-if __name__=='__main__':
-    render([('S','Unrefined History Rule'),('ec_direct','En Croissant')],'history-vs-ec','Unrefined History Rule: historical independent test','78% recognized · 5 extra awards / 100 controls · 94.0% sample badge precision · 86.5% overall agreement')
-    render([('forest','Mute selective model'),('S','Unrefined history rule'),('ec_direct','En Croissant')],'fresh-test-results','Matching Chess.com’s Brilliant badges','Selective model: 55% recognized · 1 extra / 100 controls · 98.2% sample precision · 77% agreement')
-
-
-
 
 def render_current():
-    source=ROOT/'data/combined-history-results.json'
-    d=json.loads(source.read_text());assert d['cohorts']['combined1248']['moves']==1248
+    source=ROOT/'data/selective-independent-tests.json'
+    d=json.loads(source.read_text());assert d['cohorts']['all400']['moves']==400
     fig,axes=plt.subplots(2,2,figsize=(15.8,8.4),dpi=110)
     fig.patch.set_facecolor('white')
     fig.suptitle('How closely do the badges match Chess.com?',x=.035,y=.98,ha='left',fontsize=21,color=COLORS['ink'],weight='bold')
-    fig.text(.035,.927,'1,248 studied moves · 654 games · 5 accounts',fontsize=12,color=COLORS['muted'])
+    fig.text(.035,.927,'400 test moves · 215 games · 5 accounts',fontsize=12,color=COLORS['muted'])
     audit=[]
-    for row,(cohort,label) in enumerate([('combined1248','All studied moves'),('prospective200','New games: 200 moves')]):
+    for row,(cohort,label) in enumerate([('all400','400 test moves'),('new200','Same 200-move comparison')]):
         g=d['cohorts'][cohort]
         for col,(kind,title,color) in enumerate([('positive','Brilliants correctly recognized',COLORS['moss']),('negative','Undeserved Brilliant badges',COLORS['gold'])]):
-            ax=axes[row,col];n=g['positive'] if kind=='positive' else g['negative'];limit=n if col==0 else (40 if row==0 else 20)
-            for i,(key,name) in enumerate([('v7','Mute Chess'),('ec_direct','En Croissant')]):
+            ax=axes[row,col];n=g['positive'] if kind=='positive' else g['negative'];limit=n if col==0 else 10
+            for i,(key,name) in enumerate([('selective','Mute Selective'),('ec_direct','En Croissant')]):
                 count=g['counts'][key]['TP' if kind=='positive' else 'FP']
                 ax.barh(i,limit,color=COLORS['pale'],height=.45)
                 ax.barh(i,count,color=color,height=.45,edgecolor=COLORS['ink']if col else color,linewidth=.7)
                 ax.text(count+limit*.02,i,f'{count} / {n}',va='center',fontsize=12,color=COLORS['ink'],weight='bold')
                 audit.append({'sample':cohort,'classifier':key,'panel':kind,'count':count,'denominator':n})
             ax.set_title(label+' · '+title,loc='left',fontsize=12,pad=15,color=COLORS['ink'],weight='bold')
-            ax.set_ylim(1.6,-.6);ax.set_xlim(0,limit);ax.set_yticks([0,1],labels=['Mute Chess','En Croissant']if col==0 else ['',''])
+            ax.set_ylim(1.6,-.6);ax.set_xlim(0,limit);ax.set_yticks([0,1],labels=['Mute Selective','En Croissant']if col==0 else ['',''])
             ax.set_xlabel(f'Out of {n} '+('Chess.com Brilliants'if col==0 else 'non-Brilliant moves'),color=COLORS['muted'],labelpad=7)
             ax.tick_params(length=0,labelcolor=COLORS['ink'],pad=8);ax.grid(axis='x',color='#DBE3DB',linewidth=.7);ax.set_axisbelow(True)
             for spine in ax.spines.values():spine.set_visible(False)
-    fig.text(.035,.067,'New games: 78 of 100 Brilliants recognized; 13 undeserved badges among 100 other moves.',fontsize=12,color=COLORS['ink'],weight='bold')
-    fig.text(.035,.025,'Each panel shows its own scale and denominator. Combined results include development examples; see Methods.',fontsize=10,color=COLORS['muted'])
+    fig.text(.035,.067,'Across 400 test moves: 112 Brilliants recognized; 3 undeserved badges. Model and threshold unchanged.',fontsize=12,color=COLORS['ink'],weight='bold')
+    fig.text(.035,.025,'These games were not used to train the model. Balanced selected samples; sampling and validation in Methods.',fontsize=10,color=COLORS['muted'])
     fig.subplots_adjust(left=.15,right=.98,top=.845,bottom=.17,hspace=.68,wspace=.30)
     for ext in ['png','svg']:fig.savefig(ROOT/'figures'/f'history-recovery-replay.{ext}',facecolor='white',dpi=110)
     svg=ROOT/'figures/history-recovery-replay.svg'
     svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
-    (ROOT/'figures/history-recovery-replay-audit.json').write_text(json.dumps({'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'plotted_counts':audit,'scope':'Combined studied sample and separate new-game check; no native or panel pooling.'},indent=2)+'\n')
+    (ROOT/'figures/history-recovery-replay-audit.json').write_text(json.dumps({'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'plotted_counts':audit,'scope':'Two independent fixed-model tests; no training-fit, History Rule, native or panel results pooled.'},indent=2)+'\n')
 
 if __name__=='__main__':render_current()

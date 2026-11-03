@@ -1,8 +1,8 @@
 # Fixed model and readable reference
 
-The recommended **Mute History Rule S** is defined by [A](astra/v5/variants/variantA.ts), [offer helpers](astra/v5/variants/offerProofs.ts) and [the temporal proof](astra/v5/sequence-reference/temporalProof.ts); [its exact documented decision order](../../README.md#base-algorithm-mute-history-rule-s) defines the base rule. The adoption recommendation adds the [existing-offer material-recovery guard](../history-recovery/candidate.py), with its [full-defense proof](../history-recovery/probe.py). Its all 1,048 replay is retrospective development evidence, not new unseen validation. The forest/model/native-forest material below is a retained comparison.
+The current recommendation is **Mute Selective**, the fixed model with its original chess eligibility gates. [The exact algorithm](../../README.md) explains its 75 features, 64 trees and both-window 5/6 threshold. The [History sources](astra/v5/variants/variantA.ts), [temporal proof](astra/v5/sequence-reference/temporalProof.ts) and [material-recovery guard](../history-recovery/candidate.py) remain comparisons, not required gates for Mute Selective.
 
-This is the current reproduction path: the scientific reference used for the 200-move fresh test, plus the bounded native TypeScript prototype. Legacy study-root scripts describe the earlier release. It is not a new fit, a deployment or validation of native SF19 budgets. [The report](../../REPORT.md) distinguishes badge precision, recognition and agreement.
+This is the current fixed-model reproduction path. The model bytes, scientific source and numeric rules are unchanged. Historical study-root scripts describe earlier evidence; native SF19 accuracy remains separate from saved-input parity.
 
 ## Frozen sources and portability
 

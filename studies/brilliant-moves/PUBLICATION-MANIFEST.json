@@ -1,6 +1,6 @@
 {
-  "scope": "Unified 1,248-move/654-game study with separate 200-move new-game results. Native, panel and secondary observations are never pooled. Historical data, source and preceding full summary are preserved. App PR remains draft for Mute Dev; no merge/deployment by this research publication.",
-  "generated_at": "2026-11-03T14:20:23.423074+00:00",
+  "scope": "Mute Selective publication: unchanged fixed model plus original chess eligibility rules. Headline400game-disjointtestmoves/215games exclude training fit. History/recovery comparisons and older data preserved. App PR remains draft for Mute Dev. Hashes exclude this manifest itself.",
+  "generated_at": "2026-11-03T14:38:21.581734+00:00",
   "files": [
     {
       "path": "COHORT-FREEZE.json",
@@ -19,8 +19,8 @@
     },
     {
       "path": "METHODS.md",
-      "bytes": 24534,
-      "sha256": "a5c15a3a9a48586188b811a2896264a7d47d2a24c62ecfbb93a78129fe9efadb"
+      "bytes": 27016,
+      "sha256": "5399884b701ab3c1ced50491203d98a046ffd8c960ddc0d60f6cb535ec6e5bdb"
     },
     {
       "path": "PLAN.json",
@@ -29,23 +29,23 @@
     },
     {
       "path": "PUBLICATION-CHECKS.json",
-      "bytes": 4726,
-      "sha256": "09e7b33162e5463ae2da784ab0ca880ef498bcdfcf833c06341bd2ead5cfb755"
+      "bytes": 5604,
+      "sha256": "5832995caf57a1594189ac5fe2cd77ab0f655730534177ace965d12c3fcc233e"
     },
     {
       "path": "README.md",
-      "bytes": 37085,
-      "sha256": "0f87fb55b7b6775112194c8fd956eea3aebcafb1fc7347410dc347e47cca62e7"
+      "bytes": 18662,
+      "sha256": "752472551202e30ee95085079a61ef113e39417b7e12cbbb64fee65492bfa188"
     },
     {
       "path": "REPORT.md",
-      "bytes": 4653,
-      "sha256": "cb0bc88070b69604fab2c06db0432428f42cf9724c48dc70e2343f440b1e9cd9"
+      "bytes": 3907,
+      "sha256": "bbcbeb407b4d54bacf531ae5323a75578dd7390d106e306981b133b95d3a6754"
     },
     {
       "path": "SUMMARY.json",
-      "bytes": 3808,
-      "sha256": "91f293bf61cc587517c44d8379e1a54f09cd455de7f07c405d075905e84038ee"
+      "bytes": 3368,
+      "sha256": "b961b18635067303dda26ae8219d9b67034c406d79c8ac5ae01ca27afb125cb1"
     },
     {
       "path": "analysis-baseline.json",
@@ -448,6 +448,51 @@
       "sha256": "96b5bdee3fc643370057e04d6bf543616868c5976fb3334614a38ae06b89670e"
     },
     {
+      "path": "data/selective-independent-moves.csv",
+      "bytes": 56931,
+      "sha256": "3b0c759ca7cd8be26e8f73e4d6320177bd115f36a13192d2f960a572b2bb512e"
+    },
+    {
+      "path": "data/selective-independent-tests.json",
+      "bytes": 151702,
+      "sha256": "0d802d1ebcb50e5c77b9edb74fd54aeccaaf7a2215d97fb2a90097e5fe910297"
+    },
+    {
+      "path": "data/selective-replay/DATA-PROVENANCE.json",
+      "bytes": 2828,
+      "sha256": "c9f912e22041dce4559c139416cdcbf6e489de7c592a1ec87f238e9b734a3e21"
+    },
+    {
+      "path": "data/selective-replay/RESULTS.json",
+      "bytes": 97723,
+      "sha256": "fc495b164e5c33ff4b272b8b347e684c6d04909330f4eb5b67613a2b657fa89f"
+    },
+    {
+      "path": "data/selective-replay/RUN-FREEZE.json",
+      "bytes": 971,
+      "sha256": "4dc9f492928dd0d18f6a737fc10381532cb835ccf6e2aee3283ab032a627f3c4"
+    },
+    {
+      "path": "data/selective-replay/native-parity-summary.json",
+      "bytes": 1619,
+      "sha256": "99e94ad55f118ea2f0eee85927c17eab72b5b608c6bb76571b48deda54b7db54"
+    },
+    {
+      "path": "data/selective-replay/native-parity-trace.json",
+      "bytes": 1356431,
+      "sha256": "99d6cfa6213a577b91a2d74fe3578a1ee043e8348ed4d2f6982d75ac408b2bab"
+    },
+    {
+      "path": "data/selective-replay/preceding-summary.json",
+      "bytes": 3808,
+      "sha256": "91f293bf61cc587517c44d8379e1a54f09cd455de7f07c405d075905e84038ee"
+    },
+    {
+      "path": "data/selective-replay/predictions.json",
+      "bytes": 1356119,
+      "sha256": "d5d94e466317201b2c8359165dee47863e0c6b5a7b13f9df4a34d788d2d286ce"
+    },
+    {
       "path": "data/source-hash-audit.json",
       "bytes": 17774,
       "sha256": "3cbe9089ade2045682ed1d344e22e52fce67e9b2fe5a903adebbc3ba0e41f226"
@@ -504,18 +549,18 @@
     },
     {
       "path": "figures/history-recovery-replay-audit.json",
-      "bytes": 1384,
-      "sha256": "fca42119d5e70c6a392b1d438594956a9192926d16622518d8ca29d5adcea4b9"
+      "bytes": 1369,
+      "sha256": "700d459a3fae66710e5e221b15e3b9750881b79c12c2e2f54e607f239f52fc73"
     },
     {
       "path": "figures/history-recovery-replay.png",
-      "bytes": 113305,
-      "sha256": "ba781fffa41f60e9410a679c5658859df38fdd20c061bb3dfd261b20195ce6fc"
+      "bytes": 98524,
+      "sha256": "f368083e49ec2a44cd288639f92b38465ed52237f62e29fb5892a8df85695cb2"
     },
     {
       "path": "figures/history-recovery-replay.svg",
-      "bytes": 27229,
-      "sha256": "b64cb29c289011a82efbd208b454ddd7b391ae871be002ae9fe4466b3e484436"
+      "bytes": 110364,
+      "sha256": "c99ee3a1dd6b2cf024d9f41d4f3e573929a9a2b3c5e09594ec9a4f4b060925bf"
     },
     {
       "path": "figures/history-vs-ec-audit.json",
@@ -594,8 +639,8 @@
     },
     {
       "path": "figures/visual-qa-v5.json",
-      "bytes": 1198,
-      "sha256": "92dcc54f08ba7a006828f11030abe9d1df188d2b825b506dd2c1edeb921830b6"
+      "bytes": 1261,
+      "sha256": "c365a8b5ff6602105fc461df733eb9ae222b5e095c7c9619d98163fa2a9a20a8"
     },
     {
       "path": "hero-case.json",
@@ -649,8 +694,8 @@
     },
     {
       "path": "reader-figures.py",
-      "bytes": 8509,
-      "sha256": "97eb3d4b0272b0bc6398e8298843edcd9144d038d2cbff282307d955e0d29394"
+      "bytes": 7959,
+      "sha256": "309378a36003d660864f434cd465b34079ca8602ebba754f9bc4cac00b93eadd"
     },
     {
       "path": "reference/AGPL-3.0.txt",
@@ -664,8 +709,8 @@
     },
     {
       "path": "reference/README.md",
-      "bytes": 5931,
-      "sha256": "94c4b7f16790b3d1826166d6ccfd32848bc99b7d312ca8c3e0bc8c6fe4f11d08"
+      "bytes": 5935,
+      "sha256": "0d95d4e19c59366f74eef440b0d4dfe533b6567d1a15e99fdec1c596cbb789f0"
     },
     {
       "path": "reference/current-v2/core.ts",
@@ -834,8 +879,8 @@
     },
     {
       "path": "reference/v5/README.md",
-      "bytes": 5687,
-      "sha256": "4f4baa03a3ab71711004f027db0567d598f9eb1b4661d0d1293d227de152b23f"
+      "bytes": 5362,
+      "sha256": "bc22c4ca201ed656589668093deb9a633ea8663748489e53b98bb232917d9e04"
     },
     {
       "path": "reference/v5/SOURCE-PATH-NORMALIZATION.json",

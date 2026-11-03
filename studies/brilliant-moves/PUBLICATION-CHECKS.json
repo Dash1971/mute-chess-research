@@ -88,7 +88,7 @@
     "verified_by": "Root final replay using published source and installed python-chess"
   },
   "recovery_plan_original_sha256": "1d95afbf290345ae9eeefa611f3286f07dfed8ab5da60d2aef202866d89b703f",
-  "reader_report_word_count": 677,
+  "reader_report_word_count": 547,
   "reader_report_structure": [
     "goal",
     "method",
@@ -125,24 +125,24 @@
     635
   ],
   "current_Mute_TP_FN_FP_TN": [
-    478,
-    135,
-    35,
-    600
+    112,
+    88,
+    3,
+    197
   ],
   "current_EC_direct_TP_FN_FP_TN": [
-    166,
-    447,
-    10,
-    625
+    53,
+    147,
+    3,
+    197
   ],
   "new_game_test_moves": 200,
   "new_game_test_games": 109,
   "new_game_Mute_TP_FN_FP_TN": [
-    78,
-    22,
-    13,
-    87
+    57,
+    43,
+    2,
+    98
   ],
   "new_game_EC_direct_TP_FN_FP_TN": [
     27,
@@ -164,12 +164,42 @@
   "guard_board_candidates": 12,
   "actual_guard_veto_panel_cases": 0,
   "guard_direct_validation": "Inconclusive: no actual veto activation.",
-  "current_owner_decision": "Adopt History Rule with recovery guard; app PR remains open and draft for Mute Dev. No app merge, deployment or mark-ready action.",
+  "current_owner_decision": "Adopt Mute Selective with original chess gates; no required History/recovery conjunction. App PR remains draft for Mute Dev.",
   "old_scientific_data_and_sources_preserved": true,
   "chart_counts_and_render_verified": true,
   "previous_full_summary_preserved": "data/prospective-history/preceding-summary.json",
   "current_publication_totals": {
-    "moves": 1248,
-    "games": 654
-  }
+    "headline_fixed_model_test_moves": 400,
+    "headline_games": 215,
+    "project_studied_moves": 1248,
+    "project_games": 654
+  },
+  "previous_history_combined1248_TP_FN_FP_TN": [
+    478,
+    135,
+    35,
+    600
+  ],
+  "previous_history_new200_TP_FN_FP_TN": [
+    78,
+    22,
+    13,
+    87
+  ],
+  "selected_policy": "Mute Selective",
+  "current_test_moves": 400,
+  "current_test_games": 215,
+  "current_test_class_counts": [
+    200,
+    200
+  ],
+  "model_sha256": "44704ac06378d3f671a4eed959e21959f759c0437c71af1f9119d1081293c0b7",
+  "model_or_threshold_changes": false,
+  "native_selected_saved_SF18_parity_cases": 200,
+  "native_selected_saved_SF18_parity_differences": 0,
+  "native_selected_optional_avoidability_unknown_cases": 1,
+  "native_selected_SF19_accuracy_validated": false,
+  "illustrated_Bg2_selective_award": false,
+  "illustrated_hxg6_selective_award": false,
+  "illustrated_hxg5_selective_award": false
 }
