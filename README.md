@@ -14,6 +14,8 @@ With fixed local engine evidence, Mute's existing v2 rules awarded **17/19** of 
 
 Mute v2 rewards near-best, sound, legally capturable piece offers. It credits material already won, rejects an evaluated safe alternative worth at least +6 pawns, and requires corroborating engine evidence. The report explains the [exact rules and score mapping](studies/brilliant-moves-pilot-2026-11-03/REPORT.md#the-rules-we-actually-compared), the mismatches and the limitations. Chess.com's complete formula remains unpublished. This pilot changed no application rules; Mobile Maia was left unchanged.
 
+**[Follow-up: the pawn-winning false positive →](studies/brilliant-moves-followup-2026-11-03/README.md)** Current Chess.com review calls the reported Ndxe5 **Excellent**. Two simple material filters reject it, but also remove four confirmed pilot brilliants. A closely related GothamChess pawn-winning combination illustrates why we recommend a focused second sample before changing the classifier.
+
 ## Elo seeding: giving human-like opponents useful starting ratings
 
 ![From reference ratings through measured games to a varied opponent pool.](studies/elo-seeding/bot-rating-establishment-2026-10-31/figures/reader-cover.png)
