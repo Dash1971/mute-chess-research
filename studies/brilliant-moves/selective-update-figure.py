@@ -1,44 +1,41 @@
-"""One fixed report figure from published fresh-account counts; no fitting."""
+# SPDX-License-Identifier: AGPL-3.0-only
+"""Render Mute Selective's headline metrics from published results."""
+from pathlib import Path
 import json
 import os
-from pathlib import Path
 os.environ.setdefault('MPLCONFIGDIR', '/private/tmp/mute-research-mpl')
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-
-ROOT = Path(__file__).resolve().parent
-DATA = json.loads((ROOT/'data/selective-update-2026-11-06.json').read_text())
-KEYS = ['production', 'pr285', 'selective']
-LABELS = ['Existing production', 'Older model + context fix', 'Updated Mute Selective']
+P = Path(__file__).resolve().parent
+DATA_PATH = P / 'data/fresh-results.json'
+if DATA_PATH.exists():
+    c = json.loads(DATA_PATH.read_text())['counts']['primary']['selective']
+else:
+    c = json.loads((P / 'data/selective-update-2026-11-06.json').read_text())['metrics']['selective']
+tp, fn, fp = c['TP'], c['FN'], c['FP']
 INK, MOSS, GOLD, PALE = '#172723', '#668478', '#D9B25F', '#EDF1EA'
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 12, 'svg.fonttype': 'none'})
-fig, axes = plt.subplots(1, 2, figsize=(13.5, 5.2), dpi=130)
-fig.suptitle('More genuine Brilliants. Fewer wrong badges.', x=.03, y=.97,
-             ha='left', color=INK, fontsize=21, weight='bold')
-fig.text(.03, .88, '1,000 fresh-account games · Witty_Alien · same SF19 Fast analysis', color=INK)
-for ax, field, title, limit, color, denominator in zip(axes, ['TP', 'FP'],
-        ['Brilliants recognized — higher is better', 'Wrong awards — lower is better'],
-        [1234, 70], [MOSS, GOLD], [1234, 30423]):
-    values = [DATA['metrics'][key][field] for key in KEYS]
-    ax.barh(range(3), values, color=[color, color, INK], height=.52)
-    for i, value in enumerate(values):
-        ax.text(value + limit*.015, i, f'{value:,}', va='center', color=INK, weight='bold', fontsize=14)
-    ax.set_yticks(range(3), labels=LABELS if field == 'TP' else ['', '', ''])
-    ax.set_ylim(2.7, -.7)
-    ax.set_xlim(0, limit)
-    ax.set_title(title, loc='left', fontsize=13, color=INK, pad=16)
-    ax.set_xlabel(f'Out of {denominator:,} '+('reference Brilliants' if field == 'TP' else 'non-Brilliant moves'), color=INK)
-    ax.tick_params(length=0, labelcolor=INK)
-    ax.grid(axis='x', color=PALE)
-    ax.set_axisbelow(True)
-    for spine in ax.spines.values():
-        spine.set_visible(False)
-fig.text(.03, .09, 'With the same complete confirmation: 49 more genuine awards, 20 fewer wrong awards.',
-         color=INK, weight='bold', fontsize=13)
-fig.text(.03, .025, 'Panels use different scales. One account, gallery-represented games; see Methods for labels and limits.',
-         color=INK, fontsize=10)
-fig.subplots_adjust(left=.21, right=.98, top=.71, bottom=.25, wspace=.22)
-for ext in ['png', 'svg']:
-    fig.savefig(ROOT/f'figures/selective-update-2026-11-06.{ext}', facecolor='white')
-plt.close(fig)
+fig = plt.figure(figsize=(12, 5.7), dpi=140, facecolor='white')
+fig.text(.055, .91, 'Chess.com-style Brilliants, measured', color=INK, fontsize=23, weight='bold')
+fig.text(.055, .84, 'Mute Selective · 1,000 test games · Witty_Alien', color=INK, fontsize=12)
+rows = [(.51, 'Chess.com Brilliants we recognize', tp, tp+fn),
+        (.22, 'Our Brilliant badges that match Chess.com', tp, tp+fp)]
+for bottom, title, n, total in rows:
+    fraction = n / total
+    ax = fig.add_axes([.055, bottom, .88, .16])
+    ax.barh([0], [100], color=PALE, height=.8)
+    ax.barh([0], [fraction * 100], color=MOSS, height=.8)
+    ax.text(1.5, 0, f'{fraction:.1%}', va='center', ha='left', color='white', fontsize=23, weight='bold')
+    ax.text(101.5, 0, f'{n:,} / {total:,}', va='center', ha='right', color=INK, fontsize=14)
+    ax.set_xlim(0, 103)
+    ax.set_ylim(-.5, .5)
+    ax.axis('off')
+    fig.text(.055, bottom+.17, title, color=INK, fontsize=14, weight='bold')
+fig.text(.055, .075, '38 extra awards across 30,423 other moves · Stockfish 19 Fast analysis', color=INK, fontsize=12)
+fig.text(.055, .025, 'Reference: the player’s complete Brilliant gallery; scores cover own moves in gallery-listed games.', color='#46554f', fontsize=10)
+for suffix in ['png', 'svg']:
+    fig.savefig(P / f'figures/selective-update-2026-11-06.{suffix}', dpi=140, facecolor='white', metadata={'Creator': 'Open Brilly Finder'})
+
+svg_path = P / 'figures/selective-update-2026-11-06.svg'
+svg_path.write_text('\n'.join(line.rstrip() for line in svg_path.read_text().splitlines()) + '\n')

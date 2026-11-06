@@ -2,21 +2,17 @@
 
 Readable studies, visual explanations and the evidence behind Mute Chess's design decisions.
 
-## Brilliant moves: more genuine ideas, fewer undeserved badges
+## Chess.com-style Brilliant moves on an open platform
 
-![Updated Mute Selective recognizes more Brilliants and gives fewer wrong awards on 1,000 fresh-account games.](studies/brilliant-moves/figures/selective-update-2026-11-06.png)
+![Mute Selective recognizes 62.7% of reference Brilliants; 95.3% of its awarded badges match Chess.com.](studies/brilliant-moves/figures/selective-update-2026-11-06.png)
 
-**[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges)**
+**[Read the illustrated report →](studies/brilliant-moves/REPORT.md)**
 
-Our November 6 recommendation is **the updated Mute Selective model with complete confirmation**. The context fix preserves evidence from the earlier position when checking an award again. In 1,000 fresh-account games, it recognized **774 of 1,234 reference Brilliants** and gave **38 wrong awards among 30,423 non-Brilliant moves**. Compared with the older model using the same fix, that is **49 more genuine Brilliants and 20 fewer wrong badges**, about a 34% reduction in wrong awards.
+Our research produced **Mute Selective**, a small trained model combined with checks for move quality and a real piece offer. It runs locally in the browser. On 1,000 games from an account excluded from training, it recognized **774 of 1,234 Chess.com Brilliants (62.7%)**. Of its 812 awarded badges, **774 matched Chess.com (95.3%)**.
 
-We trained the updated forest on more labeled examples and improved its tree settings, then froze it before this test. Your browser runs the decision trees locally alongside Stockfish and the basic chess checks. It does not use a neural network or remote classification call, and it does not learn during play. **The new recommendation is not yet deployed.**
+The report explains the approach, its relationship to En Croissant and other open classifiers, the evidence behind the result, and how we plan to recognize more genuine Brilliants while keeping false awards low.
 
-The report preserves the earlier En Croissant comparison and adds the new SF19 Fast results separately. The fresh test covers one account’s gallery-represented games; it does not establish accuracy for every player. Our next priority is more coverage while keeping wrong awards low.
-
-[Reader addendum](studies/brilliant-moves/REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges) · [Methods and limits](studies/brilliant-moves/METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) · [Result counts](studies/brilliant-moves/data/selective-update-2026-11-06.json)
-
-[OpenBrillyFinder study](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/REPORT.md) · [Combined seven-account PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn)
+[Methods](studies/brilliant-moves/METHODS.md) · [Algorithm and code](studies/brilliant-moves/README.md) · [Open Brilly Finder](https://github.com/Dash1971/open-brilly-finder) · [Download the annotated games](https://raw.githubusercontent.com/Dash1971/open-brilly-finder/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 
