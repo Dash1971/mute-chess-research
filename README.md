@@ -16,6 +16,8 @@ The report preserves the earlier En Croissant comparison and adds the new SF19 F
 
 [Reader addendum](studies/brilliant-moves/REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges) · [Methods and limits](studies/brilliant-moves/METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) · [Result counts](studies/brilliant-moves/data/selective-update-2026-11-06.json)
 
+[OpenBrillyFinder study](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/REPORT.md) · [Combined seven-account PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn)
+
 ## Elo seeding: giving human-like opponents useful starting ratings
 
 ![From reference ratings through measured games to a varied opponent pool.](studies/elo-seeding/bot-rating-establishment-2026-10-31/figures/reader-cover.png)

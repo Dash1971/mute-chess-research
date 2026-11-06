@@ -50,7 +50,7 @@ Other methods found more Brilliants but gave too many undeserved badges to justi
 
 ## November 6, 2026 addendum: more Brilliants, fewer wrong badges
 
-**Our recommendation is now New Selective: the updated forest at a 0.83 cutoff, together with PR285’s complete-window confirmation fix.** It is a research recommendation, not a deployed change.
+**Our recommendation is now New Selective: the updated forest at a 0.83 cutoff, together with PR285’s complete-window confirmation fix.** The proposed update belongs in the draft PR285; it has not been deployed.
 
 We followed the next step described above: train on more labeled moves, improve the forest recipe, freeze it, and check it on a different account. The development set grew to **6,293 moves**. We compared tree settings and how selective to be, keeping the basic chess checks and position features. The chosen forest has 128 trees. More generous settings recognized more Brilliants but added too many wrong badges for our preferred tradeoff.
 
@@ -75,3 +75,5 @@ These are net improvements, not perfect agreement on every move. Against that sa
 The earlier En Croissant comparison above remains a separate historical result. It used saved SF18 research analysis; this update uses the site’s SF19 Fast path. **En Croissant was not tested on this Witty_Alien sample**, so the two studies should not be combined into a new head-to-head claim.
 
 This is encouraging evidence for adopting **New Selective with PR285**, while keeping wrong awards low as we work toward broader coverage. It is one fresh account and a sample of games represented in its Brilliant gallery, not a promise of the same accuracy for every player. One previously seen position was excluded. [Methods and evidence](METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) explain the labels, sampling and limits.
+
+Read the [OpenBrillyFinder study](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/REPORT.md) for the experiment and [reproduction material](https://github.com/Dash1971/open-brilly-finder/tree/main/studies/brilliant-selective-2026-11-06/). The [combined seven-account PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn) collects the last-year gallery examples used across this research; it is a source corpus, not an additional independent test.

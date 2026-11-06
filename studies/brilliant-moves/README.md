@@ -2,6 +2,8 @@
 
 **Current recommendation, November 6, 2026:** New Selective, the frozen 128-tree forest at **0.83** in both windows, with **PR285’s complete-window confirmation fix**. It recognized 774 of 1,234 reference Brilliants and gave 38 wrong awards among 30,423 non-Brilliant moves in 1,000 fresh-account games. This update is **not yet deployed**. [Reader addendum](REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges) · [Updated methods and exact model](METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account)
 
+[New study and reproduction material](https://github.com/Dash1971/open-brilly-finder/tree/main/studies/brilliant-selective-2026-11-06/) · [Seven-account source PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn)
+
 ## Historical model and SF18 study
 
 The specification below preserves the earlier 64-tree model and its historical results. Its 5/6 cutoff and model hash do not describe the newly recommended forest.
