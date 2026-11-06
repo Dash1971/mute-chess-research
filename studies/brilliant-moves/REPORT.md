@@ -23,6 +23,8 @@ Chess.com does not publish its complete formula. Its [guidance](https://support.
 - **Learn from Chess.com examples.** We trained the small model using moves Chess.com called Brilliant and moves it did not. It considers material, piece offers, move quality and the position, then runs locally in the browser without changing during play.
 - **Prefer convincing badges.** Both engine checks must clear the model’s fixed threshold. This does not add the separate History Rule or material-recovery guard as extra requirements.
 
+> **Historical model:** The examples and 400-move comparison below describe the original 64-tree model. They are not independent test results for the updated forest. The new model’s results appear in the [dated addendum](#november-6-2026-addendum-more-brilliants-fewer-wrong-badges); it also recovers Bg2 on the archived SF18 example.
+
 ## Quiet moves can be Brilliant—and still be missed
 
 ![A quiet bishop retreat leaves a rook available.](visuals/outputs/quiet-offer-bg2.gif)
@@ -52,7 +54,7 @@ Other methods found more Brilliants but gave too many undeserved badges to justi
 
 **Our recommendation is now New Selective: the updated forest at a 0.83 cutoff, together with PR285’s complete-window confirmation fix.** The proposed update belongs in the draft PR285; it has not been deployed.
 
-We followed the next step described above: train on more labeled moves, improve the forest recipe, freeze it, and check it on a different account. The development set grew to **6,293 moves**. We compared tree settings and how selective to be, keeping the basic chess checks and position features. The chosen forest has 128 trees. More generous settings recognized more Brilliants but added too many wrong badges for our preferred tradeoff.
+The updated forest was trained on **6,293 labeled moves**, with improved tree settings and a fixed cutoff selected through grouped development comparisons. It keeps the basic chess checks and position features. The model was frozen before testing on a different account. The chosen forest has 128 trees. More generous settings recognized more Brilliants but added too many wrong badges for our preferred tradeoff.
 
 The new model still runs locally in your browser. It is trained ahead of time; it does not learn while you play. Ordinary JavaScript evaluates its decision trees—there is no neural network, ONNX runtime, ChatGPT call, or remote classification service.
 
@@ -76,4 +78,4 @@ The earlier En Croissant comparison above remains a separate historical result. 
 
 This is encouraging evidence for adopting **New Selective with PR285**, while keeping wrong awards low as we work toward broader coverage. It is one fresh account and a sample of games represented in its Brilliant gallery, not a promise of the same accuracy for every player. One previously seen position was excluded. [Methods and evidence](METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) explain the labels, sampling and limits.
 
-Read the [OpenBrillyFinder study](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/REPORT.md) for the experiment and [reproduction material](https://github.com/Dash1971/open-brilly-finder/tree/main/studies/brilliant-selective-2026-11-06/). The [combined seven-account PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn) collects the last-year gallery examples used across this research; it is a source corpus, not an additional independent test.
+Read the [OpenBrillyFinder study](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/REPORT.md) for the experiment and [reproduction material](https://github.com/Dash1971/open-brilly-finder/tree/main/studies/brilliant-selective-2026-11-06/). The [combined seven-account PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn) contains **7,019 games and 8,298 Brilliant annotations** from the last-year galleries used across this research. It is a source corpus, not an additional independent test.
