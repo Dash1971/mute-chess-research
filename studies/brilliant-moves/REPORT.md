@@ -52,7 +52,7 @@ Other methods found more Brilliants but gave too many undeserved badges to justi
 
 ## November 6, 2026 addendum: more Brilliants, fewer wrong badges
 
-**Our recommendation is now New Selective: the updated forest at a 0.83 cutoff, together with PR285’s complete-window confirmation fix.** The proposed update belongs in the draft PR285; it has not been deployed.
+**We recommend the updated Mute Selective forest at a 0.83 cutoff, together with complete confirmation.** This context fix preserves the earlier position’s evidence when the engine checks an award again. The update is still a draft; it has not been deployed.
 
 The updated forest was trained on **6,293 labeled moves**, with improved tree settings and a fixed cutoff selected through grouped development comparisons. It keeps the basic chess checks and position features. The model was frozen before testing on a different account. The chosen forest has 128 trees. More generous settings recognized more Brilliants but added too many wrong badges for our preferred tradeoff.
 
@@ -62,20 +62,20 @@ The new model still runs locally in your browser. It is trained ahead of time; i
 
 We checked **1,000 games from Witty_Alien**, an account outside the model’s development set. No Witty_Alien examples were used to train the model or adjust its cutoff. All three versions analyzed the same complete games, including both players’ moves; the scores below count only Witty_Alien’s moves.
 
-![New Selective recognizes 774 Brilliants with 38 wrong awards; the older model with PR285 recognizes 725 with 58 wrong awards.](figures/selective-update-2026-11-06.png)
+![Updated Mute Selective recognizes 774 Brilliants with 38 wrong awards; the older model with complete confirmation recognizes 725 with 58 wrong awards.](figures/selective-update-2026-11-06.png)
 
 | On the same 1,000 games | Genuine Brilliants recognized | Wrong Brilliant awards |
 | --- | ---: | ---: |
 | Existing production version | 721 / 1,234 | 57 / 30,423 |
-| Older model with PR285 | 725 / 1,234 | 58 / 30,423 |
-| **New Selective with PR285** | **774 / 1,234** | **38 / 30,423** |
+| Older model + complete confirmation | 725 / 1,234 | 58 / 30,423 |
+| **Updated Mute Selective + complete confirmation** | **774 / 1,234** | **38 / 30,423** |
 
-That is **62.7% of the reference Brilliants recognized**, with wrong awards on **0.125% of the non-Brilliant moves**. Compared with the older model using the same confirmation fix, New Selective found **49 more genuine Brilliants and gave 20 fewer wrong badges—about 34% fewer wrong awards**.
+That is **62.7% of the reference Brilliants recognized**, with wrong awards on **0.125% of the non-Brilliant moves**. Compared with the older model using the same confirmation fix, the updated Mute Selective model found **49 more genuine Brilliants and gave 20 fewer wrong badges—about 34% fewer wrong awards**.
 
 These are net improvements, not perfect agreement on every move. Against that same baseline, the new version gained 95 genuine awards and lost 46; it removed 27 wrong awards and added 7. It still missed **460** reference Brilliants.
 
 The earlier En Croissant comparison above remains a separate historical result. It used saved SF18 research analysis; this update uses the site’s SF19 Fast path. **En Croissant was not tested on this Witty_Alien sample**, so the two studies should not be combined into a new head-to-head claim.
 
-This is encouraging evidence for adopting **New Selective with PR285**, while keeping wrong awards low as we work toward broader coverage. It is one fresh account and a sample of games represented in its Brilliant gallery, not a promise of the same accuracy for every player. One previously seen position was excluded. [Methods and evidence](METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) explain the labels, sampling and limits.
+This is encouraging evidence for adopting **Updated Mute Selective + complete confirmation**, while keeping wrong awards low as we work toward broader coverage. It is one fresh account and a sample of games represented in its Brilliant gallery, not a promise of the same accuracy for every player. One previously seen position was excluded. [Methods and evidence](METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) explain the labels, sampling and limits.
 
 Read the [OpenBrillyFinder study](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/REPORT.md) for the experiment and [reproduction material](https://github.com/Dash1971/open-brilly-finder/tree/main/studies/brilliant-selective-2026-11-06/). The [combined seven-account PGN](https://github.com/Dash1971/open-brilly-finder/blob/main/studies/brilliant-selective-2026-11-06/data/seven-accounts-last-12-months-chesscom-brilliants.pgn) contains **7,019 games and 8,298 Brilliant annotations** from the last-year galleries used across this research. It is a source corpus, not an additional independent test.

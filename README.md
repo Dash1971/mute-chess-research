@@ -4,11 +4,11 @@ Readable studies, visual explanations and the evidence behind Mute Chess's desig
 
 ## Brilliant moves: more genuine ideas, fewer undeserved badges
 
-![New Selective recognizes more Brilliants and gives fewer wrong awards on 1,000 fresh-account games.](studies/brilliant-moves/figures/selective-update-2026-11-06.png)
+![Updated Mute Selective recognizes more Brilliants and gives fewer wrong awards on 1,000 fresh-account games.](studies/brilliant-moves/figures/selective-update-2026-11-06.png)
 
 **[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges)**
 
-Our November 6 recommendation is **New Selective with PR285’s complete-window confirmation fix**. In 1,000 fresh-account games, it recognized **774 of 1,234 reference Brilliants** and gave **38 wrong awards among 30,423 non-Brilliant moves**. Compared with the older model using the same fix, that is **49 more genuine Brilliants and 20 fewer wrong badges**, about a 34% reduction in wrong awards.
+Our November 6 recommendation is **the updated Mute Selective model with complete confirmation**. The context fix preserves evidence from the earlier position when checking an award again. In 1,000 fresh-account games, it recognized **774 of 1,234 reference Brilliants** and gave **38 wrong awards among 30,423 non-Brilliant moves**. Compared with the older model using the same fix, that is **49 more genuine Brilliants and 20 fewer wrong badges**, about a 34% reduction in wrong awards.
 
 We trained the updated forest on more labeled examples and improved its tree settings, then froze it before this test. Your browser runs the decision trees locally alongside Stockfish and the basic chess checks. It does not use a neural network or remote classification call, and it does not learn during play. **The new recommendation is not yet deployed.**
 

@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT/'data/selective-update-2026-11-06.json').read_text())
 KEYS = ['production', 'pr285', 'selective']
-LABELS = ['Existing production', 'Older model + PR285', 'New Selective + PR285']
+LABELS = ['Existing production', 'Older model + context fix', 'Updated Mute Selective']
 INK, MOSS, GOLD, PALE = '#172723', '#668478', '#D9B25F', '#EDF1EA'
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 12, 'svg.fonttype': 'none'})
 fig, axes = plt.subplots(1, 2, figsize=(13.5, 5.2), dpi=130)
@@ -34,7 +34,7 @@ for ax, field, title, limit, color, denominator in zip(axes, ['TP', 'FP'],
     ax.set_axisbelow(True)
     for spine in ax.spines.values():
         spine.set_visible(False)
-fig.text(.03, .09, 'Versus the older model + PR285: 49 more genuine awards, 20 fewer wrong awards.',
+fig.text(.03, .09, 'With the same complete confirmation: 49 more genuine awards, 20 fewer wrong awards.',
          color=INK, weight='bold', fontsize=13)
 fig.text(.03, .025, 'Panels use different scales. One account, gallery-represented games; see Methods for labels and limits.',
          color=INK, fontsize=10)
