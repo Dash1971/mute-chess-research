@@ -4,19 +4,17 @@ Readable studies, visual explanations and the evidence behind Mute Chess's desig
 
 ## Brilliant moves: more genuine ideas, fewer undeserved badges
 
-![The selective model and En Croissant on 400 test moves.](studies/brilliant-moves/figures/history-recovery-replay.png)
+![New Selective recognizes more Brilliants and gives fewer wrong awards on 1,000 fresh-account games.](studies/brilliant-moves/figures/selective-update-2026-11-06.png)
 
-**[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md)**
+**[Read: Making Brilliant badges feel at home on Mute Chess →](studies/brilliant-moves/REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges)**
 
-We recommend **Mute Selective: a small model we trained on chess moves labeled by Chess.com, combined with basic chess checks**. Your browser downloads it with the analysis code and runs it locally, using Stockfish evaluations and facts about the position. There is no ChatGPT or remote classification call, and it does not learn during play. En Croissant uses developer-written rules for its badge; our model learns patterns from Chess.com’s labels.
+Our November 6 recommendation is **New Selective with PR285’s complete-window confirmation fix**. In 1,000 fresh-account games, it recognized **774 of 1,234 reference Brilliants** and gave **38 wrong awards among 30,423 non-Brilliant moves**. Compared with the older model using the same fix, that is **49 more genuine Brilliants and 20 fewer wrong badges**, about a 34% reduction in wrong awards.
 
-Across **400 test moves from 215 games not used for training**, it recognized **112 of 200 Chess.com Brilliants**, compared with En Croissant’s 53. Both gave **3 undeserved badges among 200 non-Brilliant moves**.
+We trained the updated forest on more labeled examples and improved its tree settings, then froze it before this test. Your browser runs the decision trees locally alongside Stockfish and the basic chess checks. It does not use a neural network or remote classification call, and it does not learn during play. **The new recommendation is not yet deployed.**
 
-The more generous History Rule found more Brilliants but gave too many wrong badges to justify choosing it: on the same 200 moves, **78 correct and 13 wrong**, versus the selective model’s **57 correct and 2 wrong**. Our next goal is to train improved versions on more labeled examples while keeping wrong awards low. We can reuse the current test examples for training, then check improvement on different games the new model has never seen.
+The report preserves the earlier En Croissant comparison and adds the new SF19 Fast results separately. The fresh test covers one account’s gallery-represented games; it does not establish accuracy for every player. Our next priority is more coverage while keeping wrong awards low.
 
-The model and training code are openly published. The separate History Rule and recovery guard are comparison methods, not extra requirements for Mute Selective. Mute Dev handles the app merge. Mobile Maia remains unchanged.
-
-[Exact selected algorithm](studies/brilliant-moves/README.md) · [Methods and limits](studies/brilliant-moves/METHODS.md) · [Test move evidence](studies/brilliant-moves/data/selective-independent-moves.csv)
+[Reader addendum](studies/brilliant-moves/REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges) · [Methods and limits](studies/brilliant-moves/METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account) · [Result counts](studies/brilliant-moves/data/selective-update-2026-11-06.json)
 
 ## Elo seeding: giving human-like opponents useful starting ratings
 

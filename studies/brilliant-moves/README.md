@@ -1,6 +1,12 @@
-# Mute Selective: exact algorithm
+# Mute Selective: algorithm and updates
 
-**Recommendation: adopt Mute Selective, a small model we trained on chess moves labeled by Chess.com, combined with basic chess checks.** It does **not** require the separate History Rule or material-recovery guard to pass. Mute Dev handles the app merge; Mobile Maia is unchanged.
+**Current recommendation, November 6, 2026:** New Selective, the frozen 128-tree forest at **0.83** in both windows, with **PR285’s complete-window confirmation fix**. It recognized 774 of 1,234 reference Brilliants and gave 38 wrong awards among 30,423 non-Brilliant moves in 1,000 fresh-account games. This update is **not yet deployed**. [Reader addendum](REPORT.md#november-6-2026-addendum-more-brilliants-fewer-wrong-badges) · [Updated methods and exact model](METHODS.md#november-6-2026-update-frozen-forest-and-fresh-account)
+
+## Historical model and SF18 study
+
+The specification below preserves the earlier 64-tree model and its historical results. Its 5/6 cutoff and model hash do not describe the newly recommended forest.
+
+**Earlier recommendation: adopt Mute Selective, a small model we trained on chess moves labeled by Chess.com, combined with basic chess checks.** It does **not** require the separate History Rule or material-recovery guard to pass. Mute Dev handles the app merge; Mobile Maia is unchanged.
 
 Your browser downloads the model with the analysis JavaScript and runs it locally in a background worker. It combines Stockfish evaluations with facts about the position. This is a decision-tree model evaluated by ordinary JavaScript, without ONNX, a GPU requirement, ChatGPT or a remote classification service. It does not train or change during play. The model file and training code are public. En Croissant decides the badge using developer-written rules; Mute Selective uses those basic chess checks plus patterns learned from Chess.com’s labeled examples.
 

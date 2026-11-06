@@ -1,6 +1,8 @@
 # Methods, sources and reproduction
 
-**Current recommendation: Mute Selective, the fixed model plus its original chess rules.** The headline evidence is 400 test moves from 215 games, not training fit. Selective 112TP/88FN/3FP/197TN versus EC 53/147/3/197; the newest 200 alone gives 57/43/2/98 versus EC 27/73/1/99. The separate History Rule’s 78/22/13/87 found more Brilliants but gave too many extra badges to justify choosing it. No model, feature, threshold or algorithm was changed for this comparison.
+**Latest evidence:** [November 6 frozen-forest update and fresh-account validation](#november-6-2026-update-frozen-forest-and-fresh-account). Earlier sections preserve the original SF18 methods and results; their scope statements apply to those studies.
+
+**Historical recommendation: Mute Selective, the fixed model plus its original chess rules.** The headline evidence is 400 test moves from 215 games, not training fit. Selective 112TP/88FN/3FP/197TN versus EC 53/147/3/197; the newest 200 alone gives 57/43/2/98 versus EC 27/73/1/99. The separate History Rule’s 78/22/13/87 found more Brilliants but gave too many extra badges to justify choosing it. No model, feature, threshold or algorithm was changed for this comparison.
 
 ## Selective-model test roles
 
@@ -155,3 +157,25 @@ The History Rule is retained as a comparison; the selected system is the more se
 ## Native selective replay receipt
 
 The [new 200 native parity summary](data/selective-replay/native-parity-summary.json) and [full trace](data/selective-replay/native-parity-trace.json) show zero feature/missingness, score, award, integrated-symbol or EC-object differences on the exact saved SF18 inputs. Optional avoidability is unknown in one case in both windows; no physical timeout occurs. Exact frozen model bytes match. These are parity findings, not a native SF19 accuracy test. The prior History 10-game assessment is not promoted into evidence for the selected model.
+
+## November 6, 2026 update: frozen forest and fresh account
+
+The current recommendation is **New Selective at 0.83 with PR285’s complete-window confirmation fix**, not yet deployed. The 128-tree forest uses maximum depth 12, at least two distinct training cases per leaf, 24 candidate features per split and equal class costs. It keeps the same 75 position features plus 75 missingness indicators and native chess/quality checks. Each eligible engine window is scored separately; both window scores must reach 0.83. That score is not a calibrated probability of agreement with Chess.com.
+
+The full-fit model SHA-256 is:
+
+```text
+1a7150fbe52f440922d94d3ae2af337383d63f370b52d0379aeee22d581d056c
+```
+
+Development used 6,293 labeled cases, including earlier research examples and MagnusCarlsen examples. Whole-game and identical-before-position groups stayed together in three-fold comparisons. A fixed search compared 96 forest recipes, extended 12 promising recipes, and replayed three operating points through the native full-game scheduler. Those development comparisons informed selection; they are not independent validation. The chosen model and cutoff were frozen before Witty_Alien evaluation, with no training or tuning on that account.
+
+The fresh-account sample is the first 1,000 eligible games in a fixed SHA-256 ordering of the complete captured year-gallery’s games. The interval is November 6, 2025, 11:02:23.012 UTC (exclusive), through November 6, 2026, 11:02:23.012 UTC (inclusive). The sample was expanded from 200 games after partial results were visible, with the same ordering and unchanged model. This limits claims about a fully prospective stopping rule; it did not involve threshold adjustment or choosing replacement games by their outcomes.
+
+All 3,475 previously observed game IDs were excluded. Primary scoring also excludes before-positions matching any of 6,189 earlier case positions, using the first four FEN fields. One gallery-positive move matched and was excluded identically for all three versions. All three awarded it; including it adds one true positive to each total. The remaining **31,657 own moves contain 1,234 reference Brilliants and 30,423 gallery-negative moves**. Opponents’ moves participate in the full-game scheduler but are not labeled or scored.
+
+The captured gallery supplied 4,411 unique labels. Official monthly PGNs establish game identity and legal move/position history. Of the selected games’ 1,235 labels, **496 have independently captured rendered-board and arrow verification**; **739 have gallery-link, game UUID/ply, mover and legal-PGN identity verification**. The latter were not independently board-verified. A move absent from the complete gallery is treated as negative only for the account’s own moves in these represented games, not because its PGN lacks an annotation. This convention differs from the earlier explicitly reviewed control samples.
+
+All versions share identical initial **SF19 small-network WASM Fast** evidence: depth 12 / 500 ms, one thread and 16 MB hash. Confirmation uses depth 14 / 500 ms and the native six-position budget per version per game. Only exact ordered confirmation groups share evidence; the new model’s classifications are kept separate. Production uses the original scheduler; the older-model PR285 comparison and New Selective both use complete-window confirmation. This isolates the model improvement in the latter comparison. The old SF18 / 300,000-node En Croissant comparison is historical; there is no new Witty_Alien En Croissant measurement.
+
+[Published result counts and model identity](data/selective-update-2026-11-06.json) record all three confusion matrices and paired changes. Independent recount verified all 1,000 games, every completion receipt, unchanged model/source hashes, scoring masks and confirmation budgets. False-positive rate is **FP / (FP + TN)**; 38 / 30,423 = 0.125%. The 34% reduction compares 38 with PR285’s 58 wrong awards. These results describe one account’s gallery-represented games, not arbitrary players, ordinary-game prevalence or a recovered private Chess.com formula.
